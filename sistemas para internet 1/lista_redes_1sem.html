@@ -1,0 +1,124 @@
+<!-- Quais os tipos de redes de computadores, segundo a classificação por extensão geográfica? Explique a diferença entre elas. -->
+
+    Classificadas por extensão, existem 4:
+        - PAN (Personal Area Network):  É uma rede usada para comunicação entre dispositivos muito próximos,
+        geralmente dentro do alcance de uma pessoa.
+        Um exemplo pode ser dispositivos bluetooth's conectados á um celular, ou notebook.
+        - LAN (Local Area Network): É uma rede que cobre uma área pequena, como uma escola ou um escritorios. 
+        As LANs permitem a interconexão de dispositivos em uma área limitada,
+        facilitando o compartilhamento de recursos como arquivos, impressoras e acesso à internet.
+        É utilizada com frequência para conectar computadores em rede, servidores, dispositivos eletrônicos diversos.
+        As LANs podem ser conectadas por cabos (Ethernet) ou sem fio (Wi-Fi)
+        - MAN (Metropolitan Area Network): É uma rede que abrange uma região, cidade ou afins.
+       É uma  interligação de várias LAN's. Elas são frequentemente usadas pelo gorverno para interconectar vários prédios e serviços dentro de uma cidade.
+        - WAN (Wide Area Network): É uma rede que cobre uma grande área geográfica, podendo ser até internacional.
+        As WAN's permitem a comunicação a longa distância, interligando redes dentro de uma 
+        grande região geográfica.
+        Diferenças Principais:
+            - Extensão Geográfica: PANs cobrem áreas muito pequenas, enquanto WANs podem cobrir o globo inteiro.
+            - Uso e Aplicação: PANs são para uso pessoal, LANs para redes locais como escritórios, MANs para áreas metropolitanas e WANs para interconectar grandes distâncias.
+            - Tecnologia de Conexão: Cada tipo de rede pode utilizar diferentes tecnologias de conexão dependendo da sua extensão e requisitos de desempenho, desde conexões Bluetooth em PANs até fibra óptica e satélites em WANs.
+
+<!-- Explique os dois tipos de redes de computadores quanto a topologia de redes, trazendo vantagens e desvantagens de cada um dos tipos. -->
+
+    - Peer-to-peer: Neste tipo de rede os computadores trocam informações entre si, compartilhando arquivos e recursos.
+    Todos os dispositivos na rede têm funções iguais e podem atuar tanto como cliente quanto como servidor.
+    Cada dispositivo pode compartilhar recursos, arquivos e serviços diretamente com outros dispositivos na rede sem a necessidade de um servidor centralizado.
+        Vantagens: Possui um custo mais baixo, pois não há necessidade de um servidor dedicado, o que pode reduzir os custos de hardware e software,
+        além de ser fácil de configurar e administrar, especialmente para redes pequenas.
+        Desvantagens: A falta de um servidor centralizado, pode gerar uma baixa segurança para o usuário.
+
+    Cliente-servidor: Nesse tipo de rede, um ou mais servidores centralizados fornecem recursos e serviços para múltiplos clientes.
+    Os servidores gerenciam e armazenam dados, enquanto os clientes solicitam e utilizam esses recursos, daí o nome "cliente-servidor".
+    Surgiu da necessidade de criar uma estrutura que centralizasse o processamento em um computador central da rede.
+    Apresentam uma estrutura de segurança melhorada, e não há tolerância a falhas.    
+    Vantagens: Possui gerenciamento centralizado, facilitando a administração, o gerenciamento e a segurança,
+    pois os recursos e serviços são controlados a partir de um ponto central, o que melhora ainda mais a segurança.
+    Além disso, servidores dedicados podem ser otimizados para lidar com muitas solicitações simultaneamente, o que pode melhorar o desempenho da rede.
+    Desvantagens: Custo elevado, devido ao servidor dedicado, software de servidor e manutenção. Outra desvantagem é seu ponto único de falha, onde se o servidor falhar, todos os clientes ficam sem acesso.
+    
+    <!-- Diferencie comutação de circuitos de comutação de pacotes e diga onde é melhor utilizar cada tipo. -->
+
+    A comutação de circuitos e a comutação de pacotes são duas técnicas diferentes para a transmissão de dados em redes de comunicação.
+    Na comutação de circuitos, um caminho dedicado é estabelecido entre o transmissor e o receptor para a duração da comunicação.
+    Este caminho permanece reservado e exclusivo para essa conexão durante toda a sessão de comunicação, o que se difere da comutação de pacotes,
+    onde os dados são divididos em pacotes pequenos que são transmitidos de forma independente através da rede.
+    Cada pacote pode seguir um caminho diferente até o destino, onde são reordenados e reunidos.
+    A comutação de circuitos é melhor para aplicações que requerem uma conexão constante e de alta qualidade, como telefonia tradicional.
+    Proporciona um desempenho consistente, mas pode ser menos eficiente na utilização da largura de banda.
+    Já a comutação de pacotes é ideal para redes de dados modernas, como a internet, e serviços de streaming, onde a flexibilidade, a eficiência e a escalabilidade são mais importantes.
+    É mais eficiente em termos de utilização de largura de banda, mas pode apresentar variações na latência.
+
+<!-- Explique a diferença entre o switch e o hub. -->
+
+    Os switches e os hubs são dispositivos de rede usados para interconectar computadores e outros dispositivos em uma rede local (LAN).
+    Ambos têm a função de encaminhar pacotes de dados, mas diferem significativamente em certos aspectos.
+    A principal diferença entre o switch e o hub é que o hub transmite pacotes de dados para todos os dispositivos conectados a ele, sem distinguir o destinatário específico,
+    o que pode causar congestionamento e diminuir o desempenho da rede, enquanto o switch é mais avançado e eficiente, pois direciona pacotes apenas ao dispositivo destinatário correto,
+    reduzindo o tráfego desnecessário e melhorando a segurança e o desempenho da rede.
+
+<!-- Por que existem protocolos de rede? Explique com um exemplo. -->
+
+    Os protocolos de rede existem para garantir que a comunicação entre dispositivos em uma rede seja organizada, eficiente e compreendida de maneira uniforme.
+    Eles definem regras e convenções para a transmissão de dados, assegurando que dispositivos diferentes possam se comunicar de forma eficaz.
+    Sem protocolos, a comunicação em rede seria caótica e ineficaz.
+    Um exemplo da eficiencia dos protocolos seria o protocolo TCP/IP (Transmission Control Protocol) + IP (Internet Protocol),
+    que é a combinação de dois protocolos é a combinação de dois outros protocolos responsáveis por todo o envio e recebimento de dados em todas as redes e consequentemente, na Internet.
+    Essa combinação de protocolos é dividida em 4 camadas, em que primeiro há o recebimento das informações (camada de aplicação),
+    depois elas fracionadas em pacotes ou conjuntos definidos de dados para o formato da rede (transporte), para a seguir serem endereçados (rede) e finalmente enviados ao destino (interface).
+
+<!-- Quais os 4 tipos de atraso de rede? Explique cada um. -->
+
+    - Atraso de Processamento no nó: É o tempo necessário para examinar o cabeçalho do pacote, checar a integridade dos dados recebidos e determinar para onde o mesmo deverá ser encaminhado.
+    Estes atrasos geralmente estão na ordem de micro-segundos.
+    - Atraso de Fila: É o tempo que cada pacote espera em fila nos roteadores antes de ser encaminhado ao próximo enlace. Este atraso é variável e depende do tráfego na rede.
+    Se a fila estiver vazia e não houver outro pacote sendo transmitido o atraso é zero. Se há pacotes na fila o tempo de espera pode ser longo e pode chegar a ordem de milissegundos.
+    - Atraso de Transmissão: É o tempo necessário para que cada bit do pacote seja empurrado para dentro do enlace. Este atraso é diretamente proporcional ao tamanho do pacote e à largura de banda.
+    - Atraso de Propagação: É o tempo necessário para que um sinal viaje fisicamente do ponto de origem até o ponto de destino através do meio de comunicação (como cabos de rede, fibras ópticas ou ondas de rádio).
+
+<!-- Por que utiliza-se uma arquitetura em camadas para redes de computadores? -->
+
+    As camadas são usadas como um meio de simplificar um sistema tão complexo dividindo o mesmo em  partes distintas e bem definidas, cada uma com funções e responsabilidades específicas,
+    essa abordagem permite uma melhor abstração, facilitando o desenvolvimento e a manutenção ao isolar problemas e permitir modificações sem impactar todo o sistema.
+    Um de seus principais benefícios é a modularidade de torna mais fácil modificar a execução do serviço prestado pela camada.
+    A arquitetura em camadas também torna mais fácil o diagnóstico e a solução de problemas, ao permitir que técnicos se concentrem em uma camada específica, melhorando a escalabilidade e adaptabilidade das redes.
+
+<!-- Cite as 5 camadas de uma rede de computadores e explique a função de cada uma delas. -->
+    - Camada de Aplicação: É onde residem as aplicações da rede, ela lida com as necessidades de comunicação das aplicações e transforma essas necessidades em solicitações de rede. Informação organizada em PACOTES.
+    - Camada de Transporte: É responsável por garantir a entrega confiável e ordenada dos dados entre dispositivos finais. Ela realiza o controle de fluxo, correção de erros e fragmentação e reassembly dos pacotes, garantindo que os dados cheguem corretamente e na ordem correta .Informação organizada em SEGMENTOS
+    - Camada de Rede: É responsável pelo roteamento e endereçamento dos pacotes de camada de rede chamados DATAGRAMAS, através de redes diferentes, garantindo que eles cheguem ao destino correto. Ela determina o melhor caminho para os pacotes através da rede e gerencia a comunicação entre redes distintas.
+    - Camada de Enlace: É responsável por garantir uma transmissão confiável de dados entre dispositivos em uma LAN. Ela é responsável pelo controle de erros, controle de fluxo e endereçamento físico, além de segmentar e agrupar dados em QUADROS.
+    - Camada Física: É responsável por movimentar os bits individuais que estão dentro de um quadro da camada de enlace. Ela define as características do meio físico de transmissão, como cabos, conectores, e a codificação dos sinais. Informação transmitida em BITS.
+
+<!-- Quais os requisitos do serviço de transporte em rede? Explique cada um e dê exemplos. -->
+
+    Os "Requisitos do serviço de transporte de aplicações comuns se referem aos requisitos para garantir um transporte de dados adequado. Os principais requisitos são:
+
+        - Perda: Refere-se à perda de pacotes de dados durante a transmissão. Em um serviço de transporte, a perda de pacotes pode levar a erros, lentidão ou falhas na aplicação. O serviço deve ter mecanismos para detectar e recuperar pacotes perdidos para garantir a integridade dos dados.
+            Exemplo: Streaming de vídeos e chamadas de voz. Ambas quando ocorrem perda de pacotes, podem causar distorções e travamentos.
+        - Banda: Refere-se à largura de banda disponível para a transmissão de dados. É a quantidade máxima de dados que pode ser transmitida em um período específico. Para aplicações que requerem alta taxa de transferência, como streaming de vídeo ou grandes transferências de arquivos, é crucial ter uma banda adequada para garantir um desempenho eficiente e sem interrupções.
+            Exemplo: Downloads de Arquivos Grandes e Streaming 4K: Ambos serviços, caso a banda necessária não esteja disponível, podem sofrer lentidões e atrasos.
+        - Sensibilidade Temporal: Refere-se à capacidade do serviço de transporte de atender a requisitos de tempo crítico. Algumas aplicações, como chamadas de voz ou jogos online, têm alta sensibilidade temporal e exigem baixa latência e alta precisão no tempo de entrega dos pacotes. O serviço deve ser capaz de minimizar atrasos e garantir que os dados sejam entregues dentro dos prazos estabelecidos.
+            Exemplo: Jogos Online. Em jogos multiplayer online, a sensibilidade temporal é alta pois o jogo precisa atualizar simultaneamente os movimentos dos jogadores e o estado do jogo. Alta latência ou atrasos na transmissão podem resultar em uma experiência de jogo ruim, com problemas como "lag" ou desincronização.
+        
+<!-- Como funciona o HTTP. Qual a diferença entre conexão persistente e não persistente? -->
+
+    O HTTP (Hypertext Transfer Protocol) é o protocolo que possibilita a comunicação entre clientes e servidores na web, funcionando com base no modelo de requisição-resposta. Quando um navegador solicita um recurso, como uma página web ou uma imagem, ele envia uma requisição HTTP ao servidor, o endereço do recurso e alguns cabeçalhos com informações adicionais.
+    O servidor então processa a requisição e responde com um código de status, que indica se a solicitação foi bem-sucedida ou se houve algum erro, junto com cabeçalhos de resposta e o corpo da mensagem, que contém o recurso solicitado.
+    A comunicação é realizada através de conexões TCP, e dependendo da versão do HTTP, essas conexões podem ser não persistentes, exigindo a abertura e fechamento de uma nova conexão para cada requisição, ou persistentes, permitindo o uso contínuo de uma única conexão para múltiplas requisições, o que melhora a eficiência e reduz a latência.
+        Passo a passo:
+        1- O usuário requisita página WEB.
+        2- O browser envia ao servidor mensagens HTTP de requisição para os objetos da página.
+        3- O servidor recebe as requisições e responde com mensagens HTTP que contém os objetos.
+
+    - Conexão persistente: Em uma conexão persistente, apenas uma única conexão TCP é utilizada para múltiplas requisições e respostas entre o cliente e o servidor. A conexão permanece aberta após a conclusão de uma requisição e pode ser reutilizada para requisições subsequentes.
+    - Conexão não persistente: Em uma conexão não persistente, cada requisição HTTP requer uma nova conexão TCP estabelecida entre o cliente e o servidor. Após o servidor enviar a resposta para uma requisição, a conexão é fechada.
+    
+    <!-- Explique como funcionam os cookies e cite duas vantagens e duas desvantagens de sua utilização -->
+
+    Cookies são arquivos de texto com pequenos fragmentos de dados, como nome de usuário e senha que são usados para identificar seu computador enquanto você usa uma rede. Cookies específicos são usados para identificar usuários específicos e melhorar sua experiência de navegação na Web.
+    Os dados armazenados em um cookie são criados pelo servidor após sua conexão, esses dados são então rotulados com um ID exclusivo para você e seu computador. Quando o cookie é trocado entre o seu computador e o servidor da rede, o servidor lê o ID e sabe quais informações fornecer especificamente para você.
+        - Vantagem 1: Os cookies permitem que sites armazenem preferências e configurações do usuário, como idioma preferido, temas personalizados e itens no carrinho de compras. Isso proporciona uma experiência de navegação mais fluida e personalizada.
+        - Vantagem 2: Os cookies ajudam os administradores de sites a coletar dados sobre o comportamento dos usuários, como páginas visitadas e tempo gasto em cada página. Esses dados podem ser utilizados para melhorar a funcionalidade e a performance do site.
+        - Desvantagem 1: O uso extensivo de cookies pode impactar a performance do navegador e do dispositivo, especialmente se muitos cookies forem armazenados e enviados com cada requisição. Isso pode levar a um aumento no tempo de carregamento das páginas e no uso de recursos.
+        - Desvantagem 2: Cookies podem ser usados para rastrear o comportamento de navegação dos usuários e coletar dados pessoais sem o consentimento explícito. Isso levanta preocupações de privacidade e pode ser explorado para fins de marketing invasivo.
