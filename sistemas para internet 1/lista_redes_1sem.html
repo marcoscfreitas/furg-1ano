@@ -57,6 +57,13 @@
     o que pode causar congestionamento e diminuir o desempenho da rede, enquanto o switch é mais avançado e eficiente, pois direciona pacotes apenas ao dispositivo destinatário correto,
     reduzindo o tráfego desnecessário e melhorando a segurança e o desempenho da rede.
 
+    As vantagens de utilizar o Switch, é que ele é mais inteligente que o Hub, pois serve de
+    concentrador em uma rede de computadores com a diferença de que recebe um sinal
+    vindo de um computador de origem e entrega este sinal somente ao computador
+    destino, já o Hub é um dispositivo cuja função é interligar os computadores de uma rede
+    local. O hub simplesmente repassa o sinal vindo de um computador para todos os
+    computadores ligados a ele.
+
 <!-- Por que existem protocolos de rede? Explique com um exemplo. -->
 
     Os protocolos de rede existem para garantir que a comunicação entre dispositivos em uma rede seja organizada, eficiente e compreendida de maneira uniforme.
@@ -84,11 +91,11 @@
     A arquitetura em camadas também torna mais fácil o diagnóstico e a solução de problemas, ao permitir que técnicos se concentrem em uma camada específica, melhorando a escalabilidade e adaptabilidade das redes.
 
 <!-- Cite as 5 camadas de uma rede de computadores e explique a função de cada uma delas. -->
-    - Camada de Aplicação: É onde residem as aplicações da rede, ela lida com as necessidades de comunicação das aplicações e transforma essas necessidades em solicitações de rede. Informação organizada em PACOTES.
-    - Camada de Transporte: É responsável por garantir a entrega confiável e ordenada dos dados entre dispositivos finais. Ela realiza o controle de fluxo, correção de erros e fragmentação e reassembly dos pacotes, garantindo que os dados cheguem corretamente e na ordem correta .Informação organizada em SEGMENTOS
-    - Camada de Rede: É responsável pelo roteamento e endereçamento dos pacotes de camada de rede chamados DATAGRAMAS, através de redes diferentes, garantindo que eles cheguem ao destino correto. Ela determina o melhor caminho para os pacotes através da rede e gerencia a comunicação entre redes distintas.
-    - Camada de Enlace: É responsável por garantir uma transmissão confiável de dados entre dispositivos em uma LAN. Ela é responsável pelo controle de erros, controle de fluxo e endereçamento físico, além de segmentar e agrupar dados em QUADROS.
-    - Camada Física: É responsável por movimentar os bits individuais que estão dentro de um quadro da camada de enlace. Ela define as características do meio físico de transmissão, como cabos, conectores, e a codificação dos sinais. Informação transmitida em BITS.
+    - Camada de Aplicação: É onde residem as aplicações da rede, ela lida com as necessidades de comunicação das aplicações e transforma essas necessidades em solicitações de rede. Informação organizada em PACOTES. Exemplo: FTP, SMTP, HTTP.
+    - Camada de Transporte: É responsável por garantir a entrega confiável e ordenada dos dados entre dispositivos finais. Ela realiza o controle de fluxo, correção de erros e fragmentação e reassembly dos pacotes, garantindo que os dados cheguem corretamente e na ordem correta .Informação organizada em SEGMENTOS. Exemplo: TCP e UDP.
+    - Camada de Rede: É responsável pelo roteamento e endereçamento dos pacotes de camada de rede chamados DATAGRAMAS, através de redes diferentes, garantindo que eles cheguem ao destino correto. Ela determina o melhor caminho para os pacotes através da rede e gerencia a comunicação entre redes distintas. Exemplo: Protocolo IP.
+    - Camada de Enlace: É responsável por garantir uma transmissão confiável de dados entre dispositivos em uma LAN. Ela é responsável pelo controle de erros, controle de fluxo e endereçamento físico, além de segmentar e agrupar dados em QUADROS. Exemplo: PPP e Ethernet
+    - Camada Física: É responsável por movimentar os bits individuais que estão dentro de um quadro da camada de enlace. Ela define as características do meio físico de transmissão, como cabos, conectores, e a codificação dos sinais. Informação transmitida em BITS. Exemplo: o protocolo da camada física depende do meio físico. Fios: fibra, coax. Sinal físico: bitz, hertz
 
 <!-- Quais os requisitos do serviço de transporte em rede? Explique cada um e dê exemplos. -->
 
@@ -111,7 +118,7 @@
         2- O browser envia ao servidor mensagens HTTP de requisição para os objetos da página.
         3- O servidor recebe as requisições e responde com mensagens HTTP que contém os objetos.
 
-    - Conexão persistente: Em uma conexão persistente, apenas uma única conexão TCP é utilizada para múltiplas requisições e respostas entre o cliente e o servidor. A conexão permanece aberta após a conclusão de uma requisição e pode ser reutilizada para requisições subsequentes.
+    - Conexão persistente: Em uma conexão persistente, apenas uma única conexão TCP é utilizada para múltiplas requisições e respostas entre o cliente e o servidor. A conexão permanece aberta após a conclusão de uma requisição e pode ser reutilizada.
     - Conexão não persistente: Em uma conexão não persistente, cada requisição HTTP requer uma nova conexão TCP estabelecida entre o cliente e o servidor. Após o servidor enviar a resposta para uma requisição, a conexão é fechada.
     
     <!-- Explique como funcionam os cookies e cite duas vantagens e duas desvantagens de sua utilização -->
