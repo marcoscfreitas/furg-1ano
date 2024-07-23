@@ -1,0 +1,39 @@
+<!-- Sistemas para Internet - Prova I - 23/07/2024-->
+
+<!--Quais as vantagens de utilizar switch ao hub? Por quê?-->
+
+A principal diferença entre o switch e o hub é que o hub transmite pacotes de dados para todos os dispositivos conectados a ele, sem distinguir o destinatário específico, o que pode causar congestionamento e diminuir o desempenho da rede, enquanto o switch é mais avançado e eficiente, pois direciona pacotes apenas ao dispositivo destinatário correto, reduzindo o tráfego desnecessário e melhorando a segurança e o desempenho da rede. Logo, as vantagens de utilizar o Switch, é que ele é mais inteligente, pois recebe um sinal vindo de um computador de origem e entrega este sinal somente ao computador destino, já o Hub simplesmente repassa o sinal vindo de um computador para todos os computadores ligados a ele.
+
+<!--Explique a função das 5 camadas das redes de computadores, e dê exemplos de protocolos utilizados em cada uma delas.-->
+
+Camada de Aplicação: É onde residem as aplicações da rede, ela lida com as necessidades de comunicação das aplicações e transforma essas necessidades em solicitações de rede. Informação organizada em PACOTES. Exemplo: FTP, SMTP, HTTP.
+Camada de Transporte: É responsável por garantir a entrega confiável e ordenada dos dados entre dispositivos finais. Ela realiza o controle de fluxo, correção de erros e fragmentação e reassembly dos pacotes, garantindo que os dados cheguem corretamente e na ordem correta .Informação organizada em SEGMENTOS. Exemplo: TCP e UDP.
+Camada de Rede: É responsável pelo roteamento e endereçamento dos pacotes de camada de rede chamados DATAGRAMAS, através de redes diferentes, garantindo que eles cheguem ao destino correto. Ela determina o melhor caminho para os pacotes através da rede e gerencia a comunicação entre redes distintas. Exemplo: Protocolo IP.
+Camada de Enlace: É responsável por garantir uma transmissão confiável de dados entre dispositivos em uma LAN. Ela é responsável pelo controle de erros, controle de fluxo e endereçamento físico, além de segmentar e agrupar dados em QUADROS. Exemplo: PPP e Ethernet
+Camada Física: É responsável por movimentar os bits individuais que estão dentro de um quadro da camada de enlace. Ela define as características do meio físico de transmissão, como cabos, conectores, e a codificação dos sinais. Informação transmitida em BITS. Exemplo: o protocolo da camada física depende do meio físico. Fios: fibra, coax. Sinal físico: bitz, hertz
+
+
+<!--Explique como funcionam os cookies e cite duas vantagens e duas desvantagens de sua utilização.-->
+
+Cookies são arquivos de texto com pequenos fragmentos de dados, como nome de usuário e senha que são usados para identificar o computador enquanto se usa uma rede. Os dados armazenados em um cookie são criados pelo servidor após sua conexão, esses dados são então rotulados com um ID exclusivo para o usuário e seu computador. Quando o cookie é trocado entre o seu computador e o servidor da rede, o servidor lê o ID e sabe quais informações fornecer especificamente para você.
+
+    	- Vantagem 1: Os cookies permitem que sites armazenem preferências e configurações do usuário, como idioma preferido, temas personalizados e itens no carrinho de compras. Isso proporciona uma experiência de navegação mais fluida e personalizada.
+    	- Vantagem 2: Os cookies ajudam os administradores de sites a coletar dados sobre o comportamento dos usuários, como páginas visitadas e tempo gasto em cada página. Esses dados podem ser utilizados para melhorar a funcionalidade e a performance do site.
+    	- Desvantagem 1: O uso extensivo de cookies pode impactar a performance do navegador e do dispositivo, especialmente se muitos cookies forem armazenados e enviados com cada requisição. Isso pode levar a um aumento no tempo de carregamento das páginas e no uso de recursos.
+    	- Desvantagem 2: Cookies podem ser usados para rastrear o comportamento de navegação dos usuários e coletar dados pessoais sem o consentimento explícito. Isso levanta preocupações de privacidade e pode ser explorado para fins de marketing invasivo.
+
+<!--Explique como funciona o HTTP. Quais a diferença entre conexão persistente e não persistente?-->
+
+ 	O HTTP (Hypertext Transfer Protocol) é o protocolo que possibilita a comunicação entre clientes e servidores na web, funcionando com base no modelo de requisição-resposta. Quando um navegador solicita um recurso, como uma página web ou uma imagem, ele envia uma requisição HTTP ao servidor, o endereço do recurso e alguns cabeçalhos com informações adicionais.
+	O servidor então processa a requisição e responde com um código de status, que indica se a solicitação foi bem-sucedida ou se houve algum erro (erro 404, por exemplo), junto com cabeçalhos de resposta e o corpo da mensagem, que contém o recurso solicitado.
+	A comunicação é realizada através de conexões TCP, e dependendo da versão do HTTP, essas conexões podem ser persistentes, ou não-persistentes.
+
+    	Passo a passo:
+    	1- O usuário requisita a página WEB.
+    	2- O browser envia ao servidor mensagens HTTP de requisição para os objetos da página.
+    	3- O servidor recebe as requisições e responde com mensagens HTTP que contém os objetos.
+
+	- Conexão persistente: Em uma conexão persistente, apenas uma única conexão TCP é utilizada para múltiplas requisições e respostas entre o cliente e o servidor. A conexão permanece aberta após a conclusão de uma requisição e pode ser reutilizada.
+	- Conexão não persistente: Em uma conexão não persistente, cada requisição HTTP requer uma nova conexão TCP estabelecida entre o cliente e o servidor. Após o servidor enviar a resposta para uma requisição, a conexão é fechada.
+	
+
