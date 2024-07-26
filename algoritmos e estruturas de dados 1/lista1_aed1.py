@@ -173,26 +173,40 @@ nomeT4 = 'TIME 4'
 if t1 > t2 :
 	x = t1
 	nomeX = nomeT1
-	print('TIME 1 passa para final com ',x,' gols')
-else :
+	print('TIME 1 passa para final com ',x,' gols!')
+if t2 > t1 :
 	x = t2
 	nomeX = nomeT2
-	print('TIME 2 passa para final com ',x,' gols')
+	print('TIME 2 passa para final com ',x,' gols!')
+if t1 == t2 :
+	nomeX = input('TIME 1 e TIME 2 tiveram um empate, digite qual time venceu:')
+	print(f'{nomeX} passa para a final com {t1} gols!')
 if t3 > t4 :
 	y = t3
 	nomeY = nomeT3
-	print('TIME 3 passa para final com',y,' gols')
-else :
+	print('TIME 3 passa para final com',y,' gols!')
+if t4 > t3 :
 	y = t4
 	nomeY = nomeT4
-	print('TIME 4 passa para final com ',y,' gols')
+	print('TIME 4 passa para final com ',y,' gols!')
+if t3 == t4 :
+	nomeY = input('TIME 3 e TIME 4 tiveram um empate, digite qual time venceu:')
+	print(f'{nomeY} passa para a final com {t3} gols!')
+
+
 print('----- FINAL -----')
-Tx = int(input('informe os gols do primeiro time da FINAL:'))
-Ty = int(input('informe os gols do segundo time da FINAL:'))
+Tx = int(input(f'informe os gols do {nomeX} da FINAL:'))
+Ty = int(input(f'informe os gols do {nomeY} da FINAL:'))
 if Tx > Ty :
-	print(nomeX,'vence o campeonato, com',Tx,'gols')
-else :
-	print(nomeY,'vence o campeonato, com',Ty,'gols')
+	print(nomeX,'vence o campeonato, com',Tx,'gols!')
+if Ty > Tx :
+	print(nomeY,'vence o campeonato, com',Ty,'gols!')
+if Tx == Ty :
+	nomeZ = input(f'{nomeX} e {nomeY} tiveram um empate, digite qual time venceu:')
+	if nomeZ == nomeX :
+		print(nomeX,'vence o campeonato, com',Tx,'gols!')
+	else :
+		print(nomeY,'vence o campeonato, com',Ty,'gols!')
 '''
 # 9 Crie um programa em Python que leia o rendimento mensal do usuário, qual o modelo de imposto (sem correção/com correção das perdas no governo Bolsonaro) e retorne o quanto ele deve pagar de imposto.
 '''
@@ -250,13 +264,41 @@ if mod == 3 :
 #------------------------- repetição -------------------------
 
 # 10 Escreva um programa que mostre os números de 1 a 10.
+'''
+cont = 0
 
+while cont < 10 :
+    print(cont)
+    cont= cont + 1
+'''
 # 11 Escreva um programa que mostre os números de 10 a 1.
+'''
+cont = 10
 
+while cont > 0 :
+    print(cont)
+    cont = cont - 1
+'''    
 # 12 Escreva um programa que mostre os números pares de 1 a 200.
+'''
+cont = 1
 
+while cont <= 200 :
+    if cont%2==0 :
+        print(cont)
+        cont = cont + 1
+    else :
+        cont= cont + 1
+'''
 # 13 Escreva um programa que mostre a tabuada (0 a 10) de um número fornecido pelo usuário.
+'''
+num = int(input('informe um número: '))
+cont = 0
 
+while cont <= 10 :
+	print(f'{num} X {cont} = {num*cont}')
+	cont = cont + 1
+'''
 # 14 Escreva um programa que mostre a seguinte sequência de números para um valor N informado pelo usuário:
 
 #   1
@@ -266,11 +308,44 @@ if mod == 3 :
 #   5 5 5 5 5
 #   …
 #   N N N N N N N …
+'''
+cont = 1
+contStr = str(cont)
+print(cont,contStr)
 
+num = int(input('informe um valor: '))
+
+while cont != num+1 :
+    print(contStr * cont)
+    cont = cont + 1
+    contStr = str(cont)
+'''
 # 15 Escreva um programa que calcule e mostre a soma dos números de 1 a N. Não utilize as equações de progressão aritmética.
+'''
+cont = 0
+soma = 0
+num = int(input('informe um valor: '))
 
+while cont <= num :
+    soma = soma + cont
+    con = cont + 1
+print(soma)
+'''
 # 16 Escreva um programa que receba um número inteiro positivo do usuário e verifique se ele é primo.
+'''
+cont = 1
+div = 0
+num = int(input('informe um valor positivo: '))
 
+while cont <= num:
+    if num % cont == 0 :
+        div = div + 1
+    cont = cont + 1
+if div > 2 :
+    print('não é primo\nnúmero de dividores:',div)
+else :
+    print('é primo\nnúmero de dividores:',div)
+'''
 # 17 Escreva um programa que mostre a sequência de Fibonacci até o enésimo termo (n deve ser informado pelo usuário). A sequência de Fibonacci é aquela em que cada termo é a soma dos dois termos anteriores. Por exemplo, para n=8 escreva 0, 1, 1, 2, 3, 5, 8 e 13.
 
 # 18 Escreva um programa que calcule o fatorial de um número fornecido pelo usuário. O fatorial de um número n é o produto de todos os números inteiros de 1 a n.
