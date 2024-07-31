@@ -34,27 +34,34 @@ while cont <= 10 :
 	cont = cont + 1
 print('fim')
 '''
-
 '''
 resposta = 'canguru'
 cont = 1
+tent = 5
 
-tentativa = input('informe um animal: ')
+tentativa = input(f'tentativas: {tent}\ninforme um animal:\n')
 
-while tentativa != resposta :
-	tentativa = input('errou.\ninforme outro animal: ')
-	cont= cont + 1
-	if cont == 2 :
-		print('dica: anda em duas patas')
-	else :
-		if cont == 3 :
-			print('é um mamifero')
-		else :
-			if cont == 4 :
-				print('natural da austrália')
-			else :
-				if cont == 5 :
-					print('pula pula pula')
-if tentativa == resposta :
-	print('você acertou')
+while tentativa != resposta:
+    tent -= 1
+    cont += 1
+    print('----------xxx----------')
+
+    if cont == 2:
+        print('dica: anda em duas patas\n')
+    if cont == 3:
+        print('dica: é um mamífero\n')
+    if cont == 4:
+        print('dica: natural da Austrália\n')
+    if cont >= 5:
+        print('dica: pula, pula, pula\n')
+
+    if tent > 0:
+        tentativa = input(f'errou.\n\ntentativas: {tent}\ninforme outro animal:\n')
+    else:
+        break
+
+if tentativa == resposta:
+    print('você acertou!')
+else:
+    print('você perdeu.')
 '''

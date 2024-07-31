@@ -311,15 +311,26 @@ while cont <= 10 :
 '''
 cont = 1
 contStr = str(cont)
-print(cont,contStr)
 
 num = int(input('informe um valor: '))
 
 while cont != num+1 :
     print(contStr * cont)
     cont = cont + 1
-    contStr = str(cont)
+    contStr = str(cont) + ' '
 '''
+#outro exercicio (fazer pirâmide)
+
+cont = 1
+contStr = str(cont)
+spc = ' '
+num = int(input('informe um valor: '))
+
+while cont != num+1 :
+    print((spc*(num-cont)) + contStr * cont)
+    cont = cont + 1
+    contStr = str(cont) + ' '
+
 # 15 Escreva um programa que calcule e mostre a soma dos números de 1 a N. Não utilize as equações de progressão aritmética.
 '''
 cont = 0
@@ -328,7 +339,7 @@ num = int(input('informe um valor: '))
 
 while cont <= num :
     soma = soma + cont
-    con = cont + 1
+    cont = cont + 1
 print(soma)
 '''
 # 16 Escreva um programa que receba um número inteiro positivo do usuário e verifique se ele é primo.
