@@ -354,28 +354,19 @@ else :
 # (n deve ser informado pelo usuário).
 # A sequência de Fibonacci é aquela em que cada termo é a soma dos dois termos anteriores.
 # Por exemplo, para n=8 escreva 0, 1, 1, 2, 3, 5, 8 e 13.
-
-n = int(input('informe quantos números terá a sequência: '))
-start = 1
-cont = start
-termo1 = 0
-termo2 = 0
-while start <= n :
-	if start < 2 :
-		print(start)
-		start+=1
-	else :
-		termo1 = start
-		termo2 = start-1
-		print(termo1+termo2)
-		start+=1
-
-
 '''
-0+0 1+0 - 1
-1+1 2+0 - 3
-2+2 3+2 - 5
-3+5 4+4 - 7 
+n = int(input('informe quantos números terá a sequência: '))
+cont = 0
+fibo1 = 0
+fibo2 = 1
+fiboX = 0
+
+while cont <= n :
+	print(fibo1)
+	fiboX = fibo1 + fibo2
+	fibo1 = fibo2
+	fibo2 = fiboX
+	cont+=1
 '''
 # 18 Escreva um programa que calcule o fatorial de um número fornecido pelo usuário. O fatorial de um número n é o produto de todos os números inteiros de 1 a n.
 '''
@@ -498,9 +489,17 @@ print(f'MAIOR NOTA: {notaMax}\nMENOR NOTA: {notaMin}\nMÉDIA DAS NOTAS(sem maior
 # 25 Considere uma sequência de números que atende a todos critérios abaixo:
 # a - Possui sempre 2 dígitos , nem mais , nem menos.
 # b - A representação do número possui pelo menos um dígito 1 ou um dígito 2.
-# c - O número é múltiplo de 3. Faça um programa que implemente e mostre essa sequência.
+# c - O número é múltiplo de 3.
+# Faça um programa que implemente e mostre essa sequência.
 # obs: tem que usar repetição para mostrar a sequência. Não pode mostrar os números “na mão”. 
+'''
+n = 10
 
+while n < 100 :
+    if n%3 == 0 and n%10 == 1 or n%10 == 2 or n//10 == 1 or n//10 == 2 :
+        print(n)
+    n+=1
+'''
 # 26 Construa um programa em Python que escreva uma contagem de 10 (dez) minutos, ou seja, mostre 0:00, e então 0:01, 0:02, ..., 0:58, 0:59, 1:00, 1:01,  ..., até 10:00.
 '''
 h = 0
