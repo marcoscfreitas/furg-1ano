@@ -350,6 +350,23 @@ if div > 2 :
 else :
     print('é primo\nnúmero de dividores:',div)
 '''
+# outra maneira
+'''
+num = int(input('digite o numero: '))
+teste = 2
+primo = True
+
+while teste < num and primo :
+	resto = num % teste
+	if resto == 0 :
+		primo = False        
+	print(f'{num} e {teste} --> {resto} primo? {primo}')
+	teste = teste + 1
+if primo :
+	print(f'{num} é primo')
+else :
+	print(f'{num} nao é primo')
+'''
 # 17 Escreva um programa que mostre a sequência de Fibonacci até o enésimo termo
 # (n deve ser informado pelo usuário).
 # A sequência de Fibonacci é aquela em que cada termo é a soma dos dois termos anteriores.
@@ -562,4 +579,26 @@ while andar <= altura :
 	andar = andar + 1
 	cont = cont + 2
 	desloc = desloc -1
+'''
+# crie um código que diga a raiz quadrada de dado numero inteiro
+'''
+import math
+n = int(input('informe um valor para calcular a raiz quadrada: '))
+cont = 0.0001
+res = 0
+
+while res != n :
+    res = cont*cont
+    if  int(cont)*int(cont) == n :
+        print(f'a raiz de {n} é {int(cont)}')
+        res = n
+    if res > n :
+        print(f'a raiz aproximada de  {n} é {cont:.3f}')
+        res = n
+    else :
+        cont = cont + 0.0001
+    print(res)
+
+print(math.sqrt(n))
+print(abs(res-math.sqrt(n)))
 '''
