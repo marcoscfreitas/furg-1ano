@@ -35,37 +35,32 @@ print(espelho)
 '''
 x = input('informe uma string: ')
 cont = len(x)
-espelho = ''
-
-while x[cont-1] != ' ' :
-    espelho = espelho + x[cont-1]
+final = ''
+final1 = ''
+while cont > 0 :
+    final = final + x[cont-1]
     cont-=1
-    print(espelho)
-
-cont = 0
-espelho = ' ' + espelho
-
-while (len(x) - len(espelho)) > 0 :
-    espelho = x[cont] + espelho
-    cont+=1
-print(espelho)
+    if x[cont] == ' ' :
+        final1 = final  + final1
+        final = ''
+final1 = final + ' ' + final1
+print(final1)
 '''
 # fazer programa do sapo nao lava o pe
-
+'''
 x = input('digite um texto:')
 vogal = input('qual letra voce quer substituir?')
 final = ''
 cont = 0
-tamanho = len(x)
 
-while cont < tamanho :
+while cont < len(x) :
     letra = x[cont]
     if x[cont] == 'a' or x[cont] == 'e' or x[cont] == 'i' or x[cont] == 'o' or x[cont] == 'u' :
         final = final + vogal
     else  :
         final = final + letra
     cont+=1
-
 print(x)
 print('----------------')
 print(final)
+'''
