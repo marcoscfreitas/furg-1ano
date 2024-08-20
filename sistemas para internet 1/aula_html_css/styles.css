@@ -1,0 +1,25 @@
+p {
+    color:blue;
+    text-align:left;
+    background-color:#e0ffff;
+}
+h1 {
+    background-color:#6495ed;
+}
+h1.principal {
+    color: red;
+    text-align: center
+}
+h1.secundaria {
+    color: black;
+    text-align: left
+}
+#para1 {
+    text-align:center;
+    color: red;
+}
+body {
+    background-image:url('windowsxp.png');
+    background-position: center;
+    background-size: cover;
+}

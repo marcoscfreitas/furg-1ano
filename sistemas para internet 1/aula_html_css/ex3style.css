@@ -1,0 +1,22 @@
+td {
+    text-align:center;
+    font-family:'Courrier';
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+td.azul {
+    background-color: blue;
+}
+td.verde {
+    background-color: green;
+}
+td.rosa {
+    background-color: pink;
+}
+td.preto {
+    background-color: gray;
+}
+td.vermelho {
+    background-color: red;
+}
