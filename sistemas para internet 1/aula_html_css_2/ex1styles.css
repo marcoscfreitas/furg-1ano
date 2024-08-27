@@ -1,0 +1,28 @@
+h1 {
+    text-align:center;
+}
+p.main {
+    text-align: justify;
+    font-size:14px;
+}
+p.date {
+    text-align:right;
+    color:blue;
+    font-size: 10px;
+}
+
+a:link {
+    color:blue;
+
+}
+a:visited {
+    color:red;
+}
+a:hover {
+    color:yellow;
+    font: 20px arial;
+}
+a.active {
+    color:green;
+    font: 20px arial;
+}
