@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='styles.css'>
+    <title>Formulário - Prova 2 SI</title>
+</head>
+
+<body>
+    <form action='submetido.html' method='get' class ='form_field'>
+        <table>
+            <th colspan='4'>PREENCHA SEUS DADOS CORRETAMENTE</th>
+            <tr>
+                <td>NOME: <input type='text' id='nome'>&nbsp;&nbsp;IDADE: <input type='text' id='idade'>&nbsp;&nbsp;SENHA: <input type='password' id='senha'></td>
+            </tr>
+            <tr>
+                <td>Esportes que pratica: <input type='checkbox' id='volei'>Volêi&nbsp;&nbsp;<input type='checkbox' id='futebol'>Futebol&nbsp;&nbsp;<input type='checkbox' id='handbol'>Handebol&nbsp;&nbsp;Outro: <input type='text' id='outro'></td>
+            </tr>
+            <tr>
+                <td>Gosta de doces?&nbsp;&nbsp;<input type='radio' id='doce_sim' name='doces'>Sim&nbsp;&nbsp;<input type='radio' id='doce_nao' name='doces'>Não</td>
+            </tr>
+            <tr>
+                <td>Selecione duas opções de comida:
+                    <select name='comidas' id='comidas' multiple>
+                        <option value='lasanha'>Lasanha</option>
+                        <option value='pizza'>Pizza</option>
+                        <option value='churrasco'>Churrasco</option>
+                        <option value='arroz_feijao'>Arroz e Feijão</option>
+                        <option value='frango_frito'>Frango Frito</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align='center'>
+                    <textarea name='historia' id='area_texto' cols='100' rows='10' placeholder='Conte uma história sobre a comida'></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align='center'> 
+                    <button type='submit'>ENVIAR</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type='reset'>LIMPAR</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>
