@@ -1,19 +1,147 @@
 # 1) Escreva um programa que leia uma lista de palavras do usuário e retorne outra lista contendo apenas as palavras com mais de 5 caracteres.
+'''
+lista = []
+listaFinal = []
+palavra = ' '
+cont = 0
 
-# 2) Escreva um programa que receba uma lista de números e retorne uma nova lista contendo apenas os números pares.
+while palavra != '' :
+    palavra = input('informe uma palavra: ')
+    lista.append(palavra)
 
+while cont < len(lista) :
+    if len(lista[cont]) > 5 :
+        listaFinal.append(lista[cont])
+        cont+=1
+    else :
+        cont+=1
+print(lista)
+print(listaFinal)
+'''
+# 2) Escreva um programa que receba uma lista de números e retorne uma nova lista contendo apenas os números pares. 0 Finaliza o programa
+'''
+lista = []
+listaFinal = []
+numero = ''
+cont = 0
+
+while numero != 0 :
+    numero = int(input('informe uma numero: '))
+    lista.append(numero)
+print(lista)
+
+while cont < len(lista) :
+    if lista[cont]%2 == 0 :
+        listaFinal.append(lista[cont])
+        cont+=1
+    else :
+        cont+=1
+print(lista)
+print(listaFinal)
+'''
 # 3) Escreva um programa que receba duas listas do usuário e retorne uma nova lista contendo apenas os elementos comuns entre as duas listas.
+'''
+listaUm = []
+listaDois = []
+listaFinal = []
+cont1 = 0
+cont2 = 0
+elementoUm = ' '
+elementoDois = ' '
 
+while elementoUm != '' :
+    elementoUm = input('informe um elemento para lista UM: ')
+    listaUm.append(elementoUm)
+listaUm.pop(-1)
+while elementoDois != '' :
+    elementoDois = input('informe um elemento para lista DOIS: ')
+    listaDois.append(elementoDois)
+listaDois.pop(-1)
+
+while cont1 != len(listaUm) :
+    while cont2 != len(listaDois) :
+        if listaUm[cont1] == listaDois[cont2] :
+            listaFinal.append(listaUm[cont1])
+            cont2+=1
+        else :
+            cont2+=1
+    if cont2 == len(listaDois) :
+        cont1+=1
+        cont2 = 0
+
+print(listaUm)
+print(listaDois)
+print(listaFinal)
+'''
 # 4) Dada uma lista de números inteiros informada pelo usuário, escreva um programa em Python que conte quantos números únicos (diferentes) estão presentes na lista. 
 # A digitação dos elementos da lista deve encerrar quando for digitado o número zero.
 
+
+
 # 5) Faça um programa em python em que o usuário digite uma lista de números inteiros (até digitar zero).
 # Após, o programa deve mostrar a frequência de cada número na lista, ou seja, quantos números 1 tem, quantos números 2, etc.
+'''
+lista = []
+listaProcessados = []
+numero = None
+cont1 = 0
+cont2 = 0
+freq = 0
 
+while numero != 0 :
+    numero = int(input('informe um número: '))
+    if numero != 0 :
+        lista.append(numero)
+print(lista)
+
+while cont1 < len(lista) :
+    if lista[cont1] not in listaProcessados :
+        while cont2 < len(lista) :
+            if lista[cont1] == lista[cont2] :
+                freq+=1
+            cont2+=1
+        print(f'o número {lista[cont1]} aparece {freq} vezes.')
+        listaProcessados.append(lista[cont1])
+    cont1 += 1
+    cont2 = 0
+    freq = 0
+'''
 # 6) Faça um programa que gerencie uma lista de times de futebol. Você precisa criar um programa que armazene uma lista de times de futebol.
 # O programa deve permitir ao usuário adicionar novos times à lista, remover times existentes e exibir a lista completa de times.
 # Crie um menu em que o usuário fique escolhendo a opção desejada.
+'''
+listaTimes = []
+time = None
+menu = None
+cont = 0
+navbar = ('=====================\n1- adicionar novo time\n2- remover time\n3- ver todos os times\n0- sair\n=====================')
 
+print(navbar)
+while menu != 0 :
+    menu = int(input('qual opção você deseja? '))
+    if menu == 1 :
+        time = input('digite o nome do time: ')
+        listaTimes.append(time)
+    if menu == 2 :
+        print(navbar)
+        i = 0
+        while i < len(listaTimes) :
+            print(f'{i} -> {listaTimes[i]}')
+            i+=1
+        cont = int(input('digite o time que você quer remover: '))
+        listaTimes.pop(cont)
+        i = 0
+        while i < len(listaTimes) :
+            print(f'{i} -> {listaTimes[i]}')
+            i+=1
+        print(navbar)
+    if menu == 3 :
+        print(navbar)
+        i = 0
+        while i < len(listaTimes) :
+            print(f'-> {listaTimes[i]}')
+            i+=1
+'''
 # 7) Faça um programa para reserva de ingressos de um cinema. O usuário pode escolher o lugar a ser reservado (fileira e a poltrona desejada - tamanho 10x10).
 # Escreva um programa em Python que, através de um menu, permita ao usuário reservar ingressos, exibir a disponibilidade de lugares e exibir a lista de lugares reservados.
 
