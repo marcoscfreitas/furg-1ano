@@ -163,13 +163,71 @@ while menu != 0 :
 ####### LISTA 2 #######
 
 # 1) Faça um programa em python que leia uma frase e a passe para maiúscula. Você não deve utilizar as funções prontas do python para converter para maiúscula ou minúscula.
+'''
+fraseInicial = input('informe uma frase em minusculo: ')
+fraseFinal = []
+cont1 = 0
+cont2 = len(fraseInicial)
 
+while cont1 < cont2 :
+    letraConvertida = chr((ord(fraseInicial[cont1])) - 32)
+    if letraConvertida == '\x00' :
+        fraseFinal.append(' ')
+    fraseFinal.append(letraConvertida)
+    cont1+=1
+print(''.join(fraseFinal))
+'''
 # 2) Faça um programa em python que leia uma frase e passe para maiúscula a primeira letra de cada palavra. Você não deve utilizar as funções prontas do python para converter para maiúscula ou minúscula.
+'''
+fraseInicial = input('informe uma frase em minusculo: ')
+fraseFinal = []
+cont1 = 0
+cont2 = len(fraseInicial)
 
+while cont1 < cont2 :
+    if cont1 == 0 :
+        letraConvertida = chr((ord(fraseInicial[cont1])) - 32)
+        fraseFinal.append(letraConvertida)
+    elif fraseInicial[cont1] == ' ' :
+        letraConvertida = chr((ord(fraseInicial[cont1+1])) - 32)
+        fraseFinal.append(' ')
+        fraseFinal.append(letraConvertida)
+        cont1+=1
+    else :
+        fraseFinal.append(fraseInicial[cont1])
+    cont1+=1
+print(''.join(fraseFinal))
+'''
 # 3) Escreva um programa que recebe uma string do usuário e imprime a string invertida.
+'''
+fraseInicial = input('informe uma frase: ')
+fraseInvertida = []
+cont1 = len(fraseInicial)-1
 
+while cont1 >= 0 :
+    letra = fraseInicial[cont1]
+    fraseInvertida.append(letra)
+    cont1-=1
+print(''.join(fraseInvertida))
+'''
 # 4) Escreva um programa que recebe uma string do usuário e imprime a string com todas as letras maiúsculas convertidas para minúsculas e vice-versa.
+'''
+fraseInicial = input('informe uma frase em minusculo: ')
+fraseFinal = []
+cont1 = 0
 
+while cont1 < len(fraseInicial) :
+    if ord(fraseInicial[cont1]) >= 65 and ord(fraseInicial[cont1]) <= 90 : 
+        letraConvertida = chr((ord(fraseInicial[cont1])) + 32)
+        fraseFinal.append(letraConvertida)
+    elif ord(fraseInicial[cont1]) >= 97 and ord(fraseInicial[cont1]) <= 122 : 
+        letraConvertida = chr((ord(fraseInicial[cont1])) - 32)
+        fraseFinal.append(letraConvertida)
+    elif fraseInicial[cont1] == ' ' :
+        fraseFinal.append(' ')
+    cont1+=1
+print(''.join(fraseFinal))
+'''
 # 5) Escreva um programa que recebe uma frase do usuário e conta o número de palavras na frase.	
 
 # 6) Faça um programa em python que diga se uma senha digitada é fraca, média ou forte.
