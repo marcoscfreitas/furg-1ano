@@ -229,18 +229,188 @@ while cont1 < len(fraseInicial) :
 print(''.join(fraseFinal))
 '''
 # 5) Escreva um programa que recebe uma frase do usuário e conta o número de palavras na frase.	
+'''
+frase = input('digite uma frase: ')
+cont = 0
+numPalavras = 1
 
+while cont < len(frase) :
+    if frase[cont] == ' ' :
+        numPalavras+=1
+        cont+=1
+    else :
+        cont+=1
+print(f'o número de palavras na frase "{frase}" é {numPalavras}')
+'''
 # 6) Faça um programa em python que diga se uma senha digitada é fraca, média ou forte.
 # Senha fraca: não possui caracteres especiais, nem letras maiúsculas.
 # Senha média: possui letras minúsculas, números e caracteres especiais, mas não possui letras maiúsculas.
 # Senha forte: possui letras minúsculas/maiúsculas, números e caracteres especiais.
+
+'''
+#Leia uma senha  e diga se ela é 
+
+Forte: 3 tipos
+Média: 2 tipos
+Fraca: 1 tipo
+
+Numérico
+Alfabético
+Especial
+
+
+S = str(input('Digite sua senha e veja se ela é \nForte\nMédia\nFraca: '))
+
+Mai = False
+Min = False
+Num = False
+Esp = False
+CS = ''
+for C in S:
+   V = ord(C)
+   if 65 <= V <= 90:
+      Mai = True
+   elif 97 <= V <= 122:
+      Min = True
+   elif 48 <= V <= 57:
+      Num = True
+   else:
+      Esp = True
+      
+if Mai and Min and Num and Esp:
+  CS = 'Sua senha é Forte'
+elif Mai and Min and Num:
+  CS = 'Sua senha é Media'
+else:
+  CS = 'Sua senha é Fraca'
+  
+print(CS)
+'''
+
+'''
+# Leia uma senha e diga se ela é forte
+# Tipos: Numérico, Alfabético e Especial
+# Forte: 3 tipos
+# Média: 2 tipos
+# Fraca: 1 tipo
+
+senha = input("Digite a senha: ")
+
+numeros = "0123456789"
+i = ord("A")
+j = ord("a")
+letras = ""
+while i < ord("Z"):
+    letras += chr(i) + chr(j)
+    i += 1
+    j += 1
+
+tem_numero = False
+tem_letra = False
+tem_especial = False
+
+forca = 0
+tipos = ["Inválida", "Fraca", "Média", "Forte"]
+
+for char in senha:
+    if char in numeros:
+        tem_numero = True
+    else:
+        if char in letras:
+            tem_letra = True
+        else:
+            tem_especial = True
+
+if tem_numero:
+    forca += 1
+if tem_letra:
+    forca += 1
+if tem_especial:
+    forca += 1
+
+print(tipos[forca])
+'''
+# Leia uma senha e diga se ela é: FRACA -> 1 tipo; MÉDIA: 2 tipos; FORTE: 3 tipos. Tipos: alfabético, númerico e especial. 
+'''
+senha = input('Crie uma senha: ')
+alf = False
+num = False
+esp = False
+i = 0
+while i < len(senha):
+	p = ord(senha[i])
+	if (p >= 65 and p < 91) or (p >= 97 and p < 123):
+		alf = True
+	elif p >= 48 and p < 58:
+		num = True
+	else:
+		esp = True
+	i += 1
+
+if alf == True and num == False and esp == False:
+	print('Senha FRACA. Tente outra.')
+elif alf == True and num == True and esp == False:
+	print('Senha MÉDIA.')
+else:
+	print('Senha FORTE')
+'''
 
 # 7) Escreva um programa em python que leia um texto e diga se é ou não um palíndromo (ou seja, se o inverso da string é igual a ela). Não será possível utilizar qualquer função no python que trabalhe com strings.
 # Exemplos:
 # Ama
 # Mirim
 # A grama é amarga
+'''
+P = input('Escreva uma palavra e verifique se ela é um PALINDROMO: ')
+esp = ''
+C = 0
+pala = ''
 
+while C < len(P):
+    if P[C] != ' ':
+        pala = P[C] + pala 
+    else:
+        esp = esp + pala + ' '  
+        pala = '' 
+    C += 1
+
+esp = esp + pala
+
+if esp == P:
+ print('PALÍNDROMO')
+else:
+ print('NÃO PALINDROMO')
+'''
+'''
+palavra = input("Digite uma palavra: ").lower()
+
+i = 1
+arvalap = ""
+while i <= len(palavra):
+    arvalap += palavra[-i]
+    i += 1
+
+if palavra == arvalap:
+    print("É palíndromo.")
+else:
+    print("Não é palíndromo.")
+ '''
+'''
+p = input('Digite uma palavra: ')
+c = 0
+c1 = -1
+espelho = ''
+
+while c < len(p):
+	espelho += p[c1]
+	c += 1
+	c1 -= 1
+
+if p == espelho:
+	print(f'{p.capitalize()} é um PALINDROMO')
+else:
+	print(f'{p.capitalize()} NÃO é um palindromo')
+'''
 # 8) Faça um programa em python que:
 # Crie uma senha aleatória de 6 caracteres alfanuméricos (A..Z,0..9);
 # Descubra a senha criada (força bruta - tentar todas possibilidades). Obs: para encontrar a senha, você não pode comparar pedaços da senha, precisa comparar toda senha (ex: if senha_gerada==senha_tentada: ).
