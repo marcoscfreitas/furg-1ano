@@ -142,9 +142,47 @@ while menu != 0 :
             print(f'-> {listaTimes[i]}')
             i+=1
 '''
-# 7) Faça um programa para reserva de ingressos de um cinema. O usuário pode escolher o lugar a ser reservado (fileira e a poltrona desejada - tamanho 10x10).
+# 7) Faça um programa para reserva de ingressos de um cinema. O usuário pode escolher o lugar a ser reservado (fileira e a poltrona desejada - tamanho 5x5).
 # Escreva um programa em Python que, através de um menu, permita ao usuário reservar ingressos, exibir a disponibilidade de lugares e exibir a lista de lugares reservados.
+'''
+poltronas = [['A1','A2','A3','A4','A5'],['B1','B2','B3','B4','B5'],['C1','C2','C3','C4','C5'],['D1','D2','D3','D4','D5'],['E1','E2','E3','E4','E5']]
+controller = ''
 
+while controller != 4 :
+    for linha in poltronas:
+        print(*linha)
+    interface = 'o que você gostaria de fazer?\n1- reservar ingresso\n2- exibir disponibilidade de lugares\n3- exibir lista de lugares reservados\n4- sair'
+    print(interface)
+    controller = int(input())
+
+    if controller == 1 :
+        linhaLetra = input('qual linha está a poltrona desejada? (A,B,C,D ou E) ').upper()
+        if linhaLetra == 'A' :
+            print(poltronas[0])
+            linhaNumero = int(input('qual o número da poltrona desejada? (1,2,3,4  ou 5) '))
+            if linhaNumero >= 1 and linhaNumero <= 5 :
+                poltronas[0][linhaNumero-1] = 'XX'
+        if linhaLetra == 'B' :
+            print(poltronas[1])
+            linhaNumero = int(input('qual o número da poltrona desejada? (1,2,3,4  ou 5) '))
+            if linhaNumero >= 1 and linhaNumero <= 5 :
+                poltronas[1][linhaNumero-1] = 'XX'
+        if linhaLetra == 'C' :
+            print(poltronas[2])
+            linhaNumero = int(input('qual o número da poltrona desejada? (1,2,3,4  ou 5) '))
+            if linhaNumero >= 1 and linhaNumero <= 5 :
+                poltronas[2][linhaNumero-1] = 'XX'
+        if linhaLetra == 'D' :
+            print(poltronas[3])
+            linhaNumero = int(input('qual o número da poltrona desejada? (1,2,3,4  ou 5) '))
+            if linhaNumero >= 1 and linhaNumero <= 5 :
+                poltronas[3][linhaNumero-1] = 'XX'
+        if linhaLetra == 'E' :
+            print(poltronas[4])
+            linhaNumero = int(input('qual o número da poltrona desejada? (1,2,3,4  ou 5) '))
+            if linhaNumero >= 1 and linhaNumero <= 5 :
+                poltronas[4][linhaNumero-1] = 'XX'
+'''
 # 8) O algoritmo bag-of-words é uma representação simplificada usada no processamento de linguagem natural.
 # Nesse modelo, um texto é representado como a bolsa de suas palavras, desconsiderando a gramática e até mesmo a ordem das palavras, mas mantendo a multiplicidade, ou seja, a quantidade de vezes que cada palavra aparece.
 # Faça um programa em python que implemente o “bag-of-words”, contando quantas vezes cada palavra aparece em um texto e após construa um gráfico com o resultado.
@@ -154,7 +192,27 @@ while menu != 0 :
 # Conte e mostre o número total de palavras no texto.
 # Conte e mostre o número total de frases no texto.
 # Obs: considere que uma palavra é uma sequência de caracteres separada por espaços em branco e uma frase é uma sequência de palavras terminada por um ponto, ponto de exclamação ou ponto de interrogação.
+'''
+texto = input('informe um texto: ')
+cont = 0
+palavras = 1
+frases = 0
 
+while cont < len(texto) :
+    if texto[cont] == ' ' :
+        palavras+=1
+        cont+=1
+    elif texto[cont] == '.' or texto[cont] == '!' or texto[cont] == '?' :
+        frases+=1
+        cont+=1
+    else :
+        cont+=1
+
+print('o texto contém:')    
+print(f'{len(texto)} caracteres')
+print(f'{palavras} palavras')
+print(f'{frases} frases')
+'''
 # 10) Faça um programa em python que receba uma lista de números inteiros como entrada e retorne a maior soma dos números ímpares consecutivos da lista. Caso não haja números ímpares na lista, o programa deve retornar 0.
 # Exemplo de uso da função:
 # lista = [1, 2, 3, 5, 6, 7, 9, 10]
@@ -413,12 +471,122 @@ else:
 '''
 # 8) Faça um programa em python que:
 # Crie uma senha aleatória de 6 caracteres alfanuméricos (A..Z,0..9);
-# Descubra a senha criada (força bruta - tentar todas possibilidades). Obs: para encontrar a senha, você não pode comparar pedaços da senha, precisa comparar toda senha (ex: if senha_gerada==senha_tentada: ).
+# Descubra a senha criada (força bruta - tentar todas possibilidades).
+# Obs: para encontrar a senha, você não pode comparar pedaços da senha, precisa comparar toda senha (ex: if senha_gerada==senha_tentada: ).
+'''
+import random
+caracteres = 'abcdefghiklmnopqrstuvwxyz0123456789'
+senhaGerada = []
+contGerada = 0
+igualdade = False
 
+while igualdade != True :
+    while contGerada < 6 :
+        senhaGerada.append(caracteres[random.randint(0,34)])
+        contGerada+=1
+    senhaGerada =''.join(senhaGerada)
+
+    contTentada = 0
+    senhaTentada = []
+    while contTentada < 6 :
+        senhaTentada.append(caracteres[random.randint(0,34)])
+        contTentada+=1
+    senhaTentada =''.join(senhaTentada)
+
+    if senhaTentada == senhaGerada :
+        igualdade = True
+        print(f'você advinhou a senha gerada {senhaGerada} e a tentativa foi {senhaTentada}')
+    else :
+        print(f'a senha gerada é {senhaGerada}, a tentativa foi {senhaTentada}')
+'''
 # 9) Escreva um programa em python que leia uma string, e substitua cada segmento de dois ou mais espaços em branco por um só caractere de espaço. Não deve ser utilizada qualquer função no python que trabalhe com strings.
 
 # 10) Faça um programa em python que leia três textos. O programa deve imprimir o primeiro texto substituindo todas as ocorrências do segundo pelo terceiro. Não deve ser utilizada qualquer função no python que trabalhe com strings.
 
+
+#ex1
+
+# import random
+
+# cartas = []
+# naipes = ['paus', 'ouros', 'copas', 'espadas']
+# sorteadas = []
+# valores = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'valete', 'dama', 'reis', 'ás']
+# for i in range(len(valores)):
+#     for b in range(len(naipes)):
+#         cartas.append([valores[i], naipes[b]])
+
+# for x in range(0,12):
+#     # print(x)
+#     sort1 = random.randint(0, 51)
+#     sort2 = random.randint(0, 51)    
+#     if sort2 != sort1 and cartas[sort1] not in sorteadas and cartas[sort2] not in sorteadas:
+#         sorteadas.append(cartas[sort1])
+#         sorteadas.append(cartas[sort2])
+#     else:
+#         sort1 = random.randint(0, 51)
+#         sort2 = random.randint(0, 51)  
+# count = 1
+# for c in range(0, 12, 2):
+#     print(f'Jogador {count}: {sorteadas[c:c+2]}')
+#     count+=1
+
+#ex2
+
+# alfanum = 'abcdefghijklmnopqrstuvwxyz1234567890'
+# comentario = input("Digite o comentário: ")
+# palavras = []
+# user= []
+# situacao = True
+# versao1 = comentario.split(" ")
+
+
+# if '@' not in comentario:
+#     situacao = False
+
+# else:
+#     for i in range(len(versao1)):
+#         if '@' in versao1[i]:
+#             for b in range(len(versao1[i])):
+#                 user.append(versao1[i][b])
+#             for x in range(len(user)):
+#                 if user[x] != '@' and user[x] not in alfanum:
+#                     situacao = False
+#                     break
+#                 else:
+#                     situacao = True
+#                     break
+
+# if situacao == True:
+#     print("contém a menção a um usuário")
+# else: 
+#     print("não contém")
+
+#ex3
+
+# comentario = input("Digite o comentário: ")
+# versao1 = comentario.split(" ")
+# novocomentario = ''
+# for i in range(len(versao1)):
+#     if '@' in versao1[i] and len(versao1[i]) > 1:
+#         versao1[i] = "USUARIO_MENCIONADO"
+#     novocomentario += versao1[i] + " "
+# print(novocomentario)
+
+#ex4
+
+# comentario = input("Digite o comentário: ")
+# proibidas = ['teste', 'onibus', 'cassino']
+# proibidasc = 0
+# versao1 = comentario.replace(',', '')
+# versao2 = versao1.split(" ")
+# for i in range(len(versao2)):
+#     if versao2[i] in proibidas:
+#         proibidasc += 1
+# if proibidasc > 0:
+#     print("Conteúdo inadequado")
+# else:
+#     print("Comentário permitido")
 
 # FUNÇÕES AUXILIARES
 # chr: retorna o caractere que é apontado pelo inteiro i no código Unicode. Por exemplo, chr(97) retorna a string 'a'.
@@ -426,3 +594,122 @@ else:
 # randint: retorna um número inteiro aleatório entre 2 números.
 # import random
 # print(random.randint(3, 9))
+
+# ----------------------------------------------
+# list.append(x): O método append adiciona um item ao final da lista. list.append("Python") Adiciona a string "Python" ao final de list.
+# list.insert(): Insere um elemento em uma posição específica. lista.insert(1, "world")
+# list.extend(iterable): O método extend também serve para adicionar mais elementos a uma lista. list.extend(outra_lista) Estende list adicionando elementos de outra_lista.
+# list.remove(x): O método remove retira da lista o primeiro elemento cujo valor seja igual a x. list.remove("Hello") Remove a primeira ocorrência de "Hello" de list.
+# list.pop([i]): O método pop deve ser utilizado para remover um elemento com um índice específico. Ou seja, ao utilizar a.pop(2), o elemento de índice 2 será removido e também retornado pelo método, pode usar em variavel.
+# list.clear(): O método clear é mais radical, remove todos os elementos de uma lista.
+# list.index(): Retorna o índice do primeiro elemento igual ao valor especificado. indice = minha_lista.index(x) 
+# list.count(): Conta quantas vezes um elemento aparece na lista. contador = minha_lista.count("Python")
+# list.sort(): Ordena os elementos da lista. Ordena a lista numeros em ordem crescente. numeros.sort()
+# list.reverse(): Inverte a ordem dos elementos na lista. numeros.reverse()
+
+# Iterando Sobre Listas
+
+# É possível percorrer cada elemento de uma lista utilizando um loop for. Aqui imprimimos cada elemento de minha_lista.
+
+# for item in minha_lista:
+#     print(item)
+
+# List Comprehensions
+
+# List comprehensions oferecem uma maneira concisa de criar listas a partir de listas existentes.
+
+# No exemplo no abaixo o ****código cria uma nova lista quadrados contendo os quadrados dos números de 0 a 9.
+
+# quadrados = [x**2 for x in range(10)]
+
+# ----------------------------------------------
+
+# import random
+
+# def lancar_dados():
+
+#     print("\nLançando dados...")
+#     dado1 = random.randint(1,6)
+#     dado2 = random.randint(1,6)
+
+#     soma = dado1+dado2
+#     return soma
+
+# def validar_aposta(valor):
+#     if valor >=2 and valor <= 12:
+#         return True
+#     else:
+#         return False
+
+
+# def iniciarJogo():
+#     print("Bem-vindo ao Jogo de Dados!")
+#     valor = int(input("Digite o valor alvo (2-12): "))
+
+
+#     if validar_aposta(valor):
+#         soma = lancar_dados()
+#         print(f"Os números nos dados somam {soma}\n")
+#         if soma >= valor:
+#             print(f'Você ganhou a aposta! A soma dos dados é maior ou igual a {valor}.')
+#         else:
+#             print(f'Você perdeu! A soma dos dados não é maior ou igual a {valor}.')
+#     else:
+#         print("Você digitou um número inválido")
+
+# iniciarJogo()
+# ----------------------------------------------
+
+
+# ----------------------------------------------
+# 28, 30, 24, 27, 29
+# 101325, 101550, 101200, 101700, 101400
+# "Experimento A", "Experimento B", "Experimento C", "Experimento D", "Experimento E"
+# dados = open("dados.txt", "r")
+
+# def CalculoDados(arquivo):
+#     readDados = arquivo.readlines()
+#     temperaturas = []
+#     pressao = []
+#     nomes = []
+#     media1 = 0
+#     media2 = 0
+
+#     temperaturas = readDados[0].split(",")
+#     pressao = readDados[1].split(",")
+#     nomes = readDados[2].split(",")
+
+#     maiorTemp = temperaturas[0]
+#     menorPressao = pressao[0]
+#     maior25 = []
+#     stringnomes= ''
+
+#     for i in temperaturas:
+#         media1 += int(i)
+#         mediaTemp = media1/len(temperaturas)
+#         if int(i) > int(maiorTemp):
+#             maiorTemp = i
+#         if int(i)>25:
+#             maior25.append(i)
+
+#     for i in maior25:
+#         pos = temperaturas.index(i)
+#         stringnomes += nomes[pos] + " "
+#     pos = temperaturas.index(maiorTemp)
+#     nomeMaiorTemp = nomes[pos]
+
+#     for i in pressao:
+#         media2 += int(i)
+#         mediaPressao = media2/len(pressao)
+#         if int(i) < int(menorPressao):
+#             menorPressao = i
+
+#     pos2 = pressao.index(menorPressao)
+#     nomeMenosPressao = nomes[pos2]
+
+#     return print(f'Temperatura média: {mediaTemp}\nPressão média: {mediaPressao}\nExperimento com maior temperatura máxima: {nomeMaiorTemp}\nExperimento com menor pressão mínima: {nomeMenosPressao}\nExperimentos com temperatura superior a 25 graus: {stringnomes}')
+
+
+# CalculoDados(dados)
+# # print(101200 < 101325)
+# ----------------------------------------------
