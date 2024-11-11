@@ -14,7 +14,7 @@ while cont < n :
 
 while cont2 < len(listaPalavrasEscritas) :
     # print(listaPalavrasEscritas[cont2])
-    if len(listaPalavrasEscritas[cont2])  5 :
+    if len(listaPalavrasEscritas[cont2]) == 5 :
         print(3)
     else :
         palavraCerta = 'two'
@@ -24,7 +24,7 @@ while cont2 < len(listaPalavrasEscritas) :
                 cont1+=1
             else :
                 cont1+=1
-        if contErros == 2 :
+        if contErros > 1 :
             print(1)
             contErros = 0
             cont1 = 0
