@@ -1,4 +1,3 @@
-tabela_ascii = ''.join(chr(i) for i in range(32, 127))
 listaTextoBase = []
 listaPrimeira = []
 listaSegunda = []
@@ -13,12 +12,14 @@ for i in range(n) :
 for palavra in listaTextoBase :
     newLetter = ''
     for letra in palavra :
-        if letra in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' :
-            newIndex = tabela_ascii.index(letra) + 3
-            newLetter = newLetter + tabela_ascii[newIndex]
-        if letra not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' :
-            newIndex = tabela_ascii.index(letra)
-            newLetter = newLetter + tabela_ascii[newIndex]
+        if letra in 'abcdefghijklmnopqrstuvwxyz' :
+            newLetter += chr(((ord(letra) - ord('a') + 3) % 26) + ord('a'))
+        
+        elif letra in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' :
+            newLetter += chr(((ord(letra) - ord('A') + 3) % 26) + ord('A'))
+
+        else :
+            newLetter+= letra
     listaPrimeira.append(newLetter)
 
 #print(listaPrimeira)
@@ -31,14 +32,13 @@ for palavra in listaPrimeira :
 
 for palavra in listaSegunda :
     cont = len(palavra)//2
-    newLetter = palavra[:len(palavra)//2]
+    newLetter = palavra[:cont]
     while cont < len(palavra) :
-        newIndex = tabela_ascii.index(palavra[cont])-1
-        newLetter = newLetter + tabela_ascii[newIndex]
+        newLetter += chr(ord(palavra[cont]) - 1)
         cont+=1
     listaTerceira.append(newLetter)
 
-#print(listaTerceira)
+# print(listaTerceira)
 
 for final in listaTerceira :
     print(final)
