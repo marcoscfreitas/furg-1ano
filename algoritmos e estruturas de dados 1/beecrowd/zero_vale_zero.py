@@ -1,15 +1,17 @@
-numeros = input().split(' ')
-numerosInt = []
-for n in numeros :
-    numerosInt.append(int(n))
+while True :
+    numeros = input().split(' ')
+    numerosInt = []
 
-soma = numerosInt[0] + numerosInt[1]
-soma = str(soma)
+    for n in numeros :
+        numerosInt.append(int(n))
 
-for i in soma :
-    if i == '0' :
-        soma = soma.replace('0','')
-print(soma)
+    if numerosInt[0] == 0 and numerosInt[1] == 0 :
+        break
+
+    soma = numerosInt[0] + numerosInt[1]
+    soma = str(soma).replace('0','')
+
+    print(soma)
 
 
 # def tirarZero(numeros) :
