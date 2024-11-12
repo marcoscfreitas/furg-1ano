@@ -1,0 +1,35 @@
+<!-- Faça um script que obtenha a hora atual do computador e apresente na tela a hora
+e a seguinte mensagem:
+- Se for antes das 12 horas escreva “Bom Dia”
+- Se for após as 12 horas escreva “Boa Tarde”
+- Se não for nenhum dos casos acima, escreva “Boa Noite”
+OBS: a hora e a mensagem devem ser mostradas no HTML e não usando o comando alert. -->
+
+<html>
+    <head>
+        <title>Hora Atual</title>
+        <script>
+            function mostrarHora() {
+                var dataAtual = new Date();
+                horas = dataAtual.getHours();
+    
+                if (horas >= 0 && horas < 12) {
+                    document.write("<h1>Bom dia!</h1>");
+                }
+    
+                if (horas >= 12 && horas < 18) {
+                    document.write("<h1>Boa tarde!</h1>");
+                }
+    
+                if (horas >= 18 && horas < 24) {
+                    document.write("<h1>Boa noite!</h1>");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <title>Horário</title>
+        <input type="button" value="Mostrar Hora" onclick="mostrarHora()">
+    </body>
+    </html>
+    

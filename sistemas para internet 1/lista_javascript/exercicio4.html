@@ -1,0 +1,29 @@
+<html>
+<head>
+<script>
+    function retornaMaiorMenor () {
+        let maior = 0;
+        let numero = prompt('digite um numero: ')
+        let menor = numero
+        for (let i = 0; i < 4 ; i++) {  
+            let numero = prompt('digite um numero: ');
+            if (numero > maior) {
+                maior = numero;
+            }
+            if (numero < menor) {
+                menor = numero;
+            }
+        }
+        alert("o maior número é " + maior)
+        alert("o menor número é " + menor)
+    }
+</script>
+
+<body>
+    <input type="button" onClick='retornaMaiorMenor()' value="clique aqui">
+</body>
+</head>
+
+
+
+</html>

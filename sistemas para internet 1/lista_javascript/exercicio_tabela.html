@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>Tabela 3x3</title>
+    <style>
+        table {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        td {
+
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        function colorirTable (t) {
+            var x = t
+
+            if (x.id == "amarelo") {
+                x.style.background = "yellow"
+                document.getElementById("amarelo").backgroundcolor="yellow"
+            }
+            if (x.id == "vermelho") {
+                x.style.background = "red"
+                document.getElementById("vermelho").backgroundcolor="red"
+            }
+            if (x.id == "rosa") {
+                x.style.background = "pink"
+                document.getElementById("rosa").backgroundcolor="pink"
+            }
+            if (x.id == "preto") {
+                x.style.background = "black"
+                document.getElementById("preto").backgroundcolor="black"
+            }
+            if (x.id == "verde") {
+                x.style.background = "green"
+                document.getElementById("verde").backgroundcolor="green"
+            }
+            if (x.id == "azul") {
+                x.style.background = "blue"
+                document.getElementById("azul").backgroundcolor="blue"
+            }
+        }
+
+        function descoloreTable (t) {
+            var x = t
+
+            if (x.id == "amarelo") {
+                x.style.background = "white"
+                document.getElementById("amarelo").backgroundcolor="white"
+            }
+            if (x.id == "vermelho") {
+                x.style.background = "white"
+                document.getElementById("vermelho").backgroundcolor="white"
+            }
+            if (x.id == "rosa") {
+                x.style.background = "white"
+                document.getElementById("rosa").backgroundcolor="white"
+            }
+            if (x.id == "preto") {
+                x.style.background = "white"
+                document.getElementById("preto").backgroundcolor="white"
+            }
+            if (x.id == "verde") {
+                x.style.background = "white"
+                document.getElementById("verde").backgroundcolor="white"
+            }
+            if (x.id == "azul") {
+                x.style.background = "white"
+                document.getElementById("azul").backgroundcolor="white"
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td id="amarelo" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Amarelo</td>
+            <td id="vermelho" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Vermelho</td>
+            <td id="rosa" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Rosa</td>
+        </tr>
+        <tr>
+            <td id="preto" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Preto</td>
+            <td id="amarelo" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Amarelo</td>
+            <td id="verde" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Verde</td>
+        </tr>
+        <tr>
+            <td id="azul" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Azul</td>
+            <td id="vermelho" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Vermelho</td>
+            <td id="amarelo" onMouseOver="colorirTable(this)" onMouseOut="descoloreTable(this)">Amarelo</td>
+        </tr>
+    </table>
+</body>
+</html>

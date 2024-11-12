@@ -1,0 +1,45 @@
+<!-- Faça um script que receba quatro notas de um aluno. O script deve calcular a
+média final do aluno e apresentar na tela uma mensagem de Aprovado caso sua média
+tenha sido maior ou igual asete ou Reprovado se sua média for menor que sete. As
+notas devem ser informadas pelo usuário através de 4 inputs um para cada nota. -->
+
+<html>
+
+<head>
+    <title>Média de Notas</title>
+    <script type="text/javascript" language="javascript">
+        function media() {
+            n1 = parseFloat(document.getElementById("n1").value);
+            n2 = parseFloat(document.getElementById("n2").value);
+            n3 = parseFloat(document.getElementById("n3").value);
+            n4 = parseFloat(document.getElementById("n4").value);
+            media = (n1 + n2 + n3 + n4) / 4;
+
+            if (media > 7) {
+                alert("Aprovado");
+            }
+            else {
+                alert("Reprovado");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<form id="form">
+    <label for="n1">Nota 1</label>
+    <input type="number" id="n1" name="n1" required><br>
+    <label for="n2">Nota 2</label>
+    <input type="number" id="n2" name="n2" required><br>
+    <label for="n3">Nota 3</label>
+    <input type="number" id="n3" name="n3" required><br>
+    <label for="n4">Nota 4</label>
+    <input type="number" id="n4" name="n4" required><br>
+    <input type="button" value="Calcular" onclick="media()">
+
+</form>
+
+</body>
+
+</html>

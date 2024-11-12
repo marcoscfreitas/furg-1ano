@@ -1,0 +1,22 @@
+<head>
+    <script>
+        function bigImg(x) {
+            x.style.height="500px";
+            x.style.width="500px";
+        }
+
+        function normalImg(x) {
+            x.style.height="250px";
+            x.style.width="250px";
+        }
+
+    </script>
+</head>
+
+<body>
+    <img onMouseOver="bigImg(this)" onMouseOut="normalImg(this)"
+    border="0" src="smiley.png" alt="Smiley" width="250" height="250">
+
+    <p>The function bigImg() is triggered when the user moves the mouse pointer over the image.</p>
+    <p>The function normalImg() is triggered when the mouse pointer is moved out of the range.</p>
+</body>
