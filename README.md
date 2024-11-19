@@ -1,2 +1,2 @@
-# FURG - Primeiro Semestre
-Repositório para aulas de matérias técnicas do primeiro semestre de sistemas de informação na FURG.
+# FURG - Primeiro Ano
+Repositório para aulas de matérias técnicas do primeiro ano do curso de Sistemas de Informação na FURG.
