@@ -1,42 +1,59 @@
 <html>
 <head>
     <title>Exercicio 3</title>
-<script>
-    function myName() {
-        var name = document.getElementById('nome');
-        name.value = name.value.toUpperCase();
-    }
+    <script>
+        function myName() {
+            var name = document.getElementById('nome');
+            name.value = name.value.toUpperCase();
+        }
 
-    function myDate() {
-        var date = document.getElementById('nasc');
-        var regexp = /\d{1,2}\/\d{1,2}\/\d{2,4}/;
-        date.value = data.replace(regex,date)
-        alert(date)
-    }
+        function myDate() {
+            var date = document.getElementById('nasc');
+            var regexp = /^(\d{1,2})(\d{1,2})(\d{2,4})$/;
+            var onlyNumbers = date.value.replace(/\D/g, '');
+            
+            if (regexp.test(onlyNumbers)) {
+                date.value = onlyNumbers.replace(regexp, '$1/$2/$3');
+            } else {
+                alert("Data inválida. Insira no formato DD/MM/AAAA.");
+                date.value = '';
+            }
+        }
 
-    function myCPF() {
+        function myCPF() {
+            var cpf = document.getElementById('cpf');
+            var regexp = /^(\d{3})(\d{3})(\d{3})(\d{2})$/;
+            var onlyNumbers = cpf.value.replace(/\D/g, '');
+            
+            if (regexp.test(onlyNumbers)) {
+                cpf.value = onlyNumbers.replace(regexp, '$1.$2.$3-$4');
+            } else {
+                alert("CPF inválido. Insira 11 dígitos.");
+                cpf.value = '';
+            }
+        }
 
-    }
+        function myPass() {
+            var senha = document.getElementById('senha').value;
+            var confSenha = document.getElementById('confsenha').value;
 
-    function myPass() {
-
-    }
-
-
-</script>
-
-
-
-
-
+            if (senha !== '' && confSenha !== '') {
+                if (senha === confSenha) {
+                    alert("Senhas coincidem.");
+                } else {
+                    alert("As senhas não coincidem.");
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-        <form action='post'>
-            Nome: <input type='text' id='nome' onBlur='myName()'><br><br>
-            Data de Nascimento: <input type='text' id='nasc' onBlur='myDate()'><br><br>
-            CPF: <input type='number' id='cpf' onBlur='myCPF()'><br><br>
-            Senha: <input type='password' id='senha' onBlur='myPass()'><br><br>
-            Confirmar senha: <input type='password' id='confsenha' onBlur='myPass()'>
-        </form>
+    <form action='post'>
+        Nome: <input type='text' id='nome' onBlur='myName()'><br><br>
+        Data de Nascimento: <input type='text' id='nasc' onBlur='myDate()'><br><br>
+        CPF: <input type='text' id='cpf' onBlur='myCPF()'><br><br>
+        Senha: <input type='password' id='senha' onBlur='myPass()'><br><br>
+        Confirmar senha: <input type='password' id='confsenha' onBlur='myPass()'>
+    </form>
 </body>
 </html>
