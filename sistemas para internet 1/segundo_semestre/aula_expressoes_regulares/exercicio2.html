@@ -1,0 +1,35 @@
+<!-- Escreva uma função para determinar se uma string representa
+um número de telefone (fixo ou celular) válido. Exemplos de
+números de telefones válidos:
+
+• (53) 3123-4567
+• 533123-4567
+• (053)3123-4567
+• (53)31234567
+• 5331234567
+• (053) 91234 5678
+• (053)91234 5678
+• 053912345678
+• 53 91234 5678
+• 5391234 5678. -->
+
+<html>
+<head>
+    <title>Expressões Regulares Exercicio 2</title>
+    <script>
+        function isPhone() {
+            var regexp = /^(0?[1-9]{2}[- ]?|\(0?[0-9]{2}\) ?)[2-9]?[0-9]{4}[- ]?[0-9]{4}$/;
+            var telefone = document.getElementById('telefone').value;
+
+            if (regexp.test(telefone)) {
+                alert('é um celular');
+            } else {
+                alert('não é celular');
+            }
+        }
+    </script>
+</head>
+<body>
+    Telefone: <input type='text' id='telefone' onBlur='isPhone()'>
+</body>
+</html>

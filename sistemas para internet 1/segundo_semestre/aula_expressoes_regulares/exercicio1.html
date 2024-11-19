@@ -1,0 +1,24 @@
+<!-- Escreva uma função para determinar se uma string representa
+um número (inteiro ou real) válido. Exemplos de números
+válidos: 10, +5, −3, −10.3, 0.80, 2.8033. -->
+
+<html>
+<head>
+    <title>Expressões Regulares Exercicio 1</title>
+    <script>
+        function isNum() {
+            var regexp = /^[+-]?[0-9]+(\.[0-9]+)?$/;
+            var num = document.getElementById('numero').value;
+
+            if (regexp.test(num)) {
+                alert('é número');
+            } else {
+                alert('não é número');
+            }
+        }
+    </script>
+</head>
+<body>
+    Número: <input type='text' id='numero' onBlur='isNum()'>
+</body>
+</html>
