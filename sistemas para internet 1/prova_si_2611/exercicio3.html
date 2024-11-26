@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Exercicio 3</title>
+    <script>
+        function incremento() {
+            var n1 = +document.getElementById('n1').value;
+            var n2 = +document.getElementById('n2').value;
+            var saida = document.getElementById('saida')
+            
+            saida.innerHTML = ''
+            while (n1 <= n2) {
+                saida.innerHTML += ' ' + n1
+                n1++
+            }
+        }
+    </script>
+</head>
+<body>
+    Número 1 <input type='number' name='numero1' id='n1' style='width:70px'>
+    Número 2 <input type='number' name='numero2' id='n2' style='width:70px'>
+    <p id='saida'></p>
+    <input type='button' value='enviar' onclick='incremento()'>
+</body>
+</html>
