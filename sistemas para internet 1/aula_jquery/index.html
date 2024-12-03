@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='jquery.js'> </script>
+    <title>Aula JQuery</title>
+    <style>
+        #verde {
+            color: green;
+        }
+        #vermelho {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>1) Crie dois parágrafos o primeiro deve ter a cor do texto verde, o segundo deve ter a cor do texto vermelho. Quanto o cursor do mouse passar sobre o primеіго рагágrafo as cores dos textos devem ser invertidas (parágrafo 1 fica vermelho, parágrafo 2 fica verde).</h2>
+    <p id='verde'>
+        Isso é um parágrafo verde
+    </p>
+    <p id='vermelho'>
+        Isso é um parágrafo vermelho
+    </p>
+
+    <h2>2) Crie a seguinte estrutura HTML:<br>Um input para receber um nome;<br> Um parágrafo vazio;<br> Um botão denominado concluir.<br> Note que o usuário deve preencher seu nome e clicar no botão concluir, logo em seguida o paragrafo vazio deve ser atualizado para a seguinte frase 'seu nome é:' seguido do nome que o usuário digitou.</h2>
+    <input type='text' name='nome' id='nome' placeholder='insira seu nome...'>
+    <p id='saida'></p>
+    <input type='button' value='concluir' id='enviar'>
+
+
+    <h2>3) Crie uma estrutura HTML com dois inputs. Neste exercício tudo que for escrito no ргіmеіго input deve automaticamente e instantaneamente ser clonado рага о segundo input.</h2>
+    <input type='text' name='input1' id='input1'><br><br>
+    <input type='text' name='input2' id='input2'>
+
+
+    <script>
+        $(document).ready(function() {
+            console.log('jQuery carregado com sucesso!');
+        
+        // script exercicio 1
+        $('#verde').mouseover(
+            function() {
+                $(this).css('color', 'red')
+                $('#vermelho').css('color', 'green');
+            }
+        )
+        $('#verde').mouseout(
+            function() {
+                $(this).css('color', 'green')
+                $('#vermelho').css('color', 'red');
+            }
+        )
+
+        // script exercicio 2
+        $('#enviar').click(
+            function() {
+                var nome = $('#nome').val();
+                $('#saida').text('seu nome é ' + nome)
+                }
+        )
+
+        // script exercicio 3
+        $('#input1').blur(
+            function() {
+                var saida = $('#input1').val();
+                $('#input2').val(saida)
+            }
+        )
+        });
+    </script>
+</body>
+</html>
