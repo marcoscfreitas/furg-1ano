@@ -1,0 +1,52 @@
+<!-- Construa um gráfico de pizza com os dados:
+Categoria Pequena      35
+Categoria Média        52
+Categoria Grande       20 -->
+
+<html>
+<head>
+    <title>Exercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+    .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 20px auto;
+    }
+    </style>
+</head>
+<body>
+    <div id='highcharts-line-chart' class='chart-container'></div>
+
+    <script>
+    $(document).ready(function () {
+        // Highcharts
+        Highcharts.chart('highcharts-line-chart', {
+        chart: {
+            type: 'pie', // Tipo de gráfico: linha
+        },
+        title: {
+            text: 'Gráfico de Pizza (Pie)', // Título do gráfico
+        },
+        series: [{
+        name: 'Valor',
+        data: [{
+            name: 'Categoria Pequena',
+            y: 35
+        },
+        {
+            name: 'Categoria Média',
+            y: 52
+        },
+        {
+            name: 'Categoria Grande',
+            y: 20
+        }]
+    }]
+});
+    });
+    </script>
+</body>
+</html>

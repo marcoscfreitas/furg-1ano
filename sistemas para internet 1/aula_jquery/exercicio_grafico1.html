@@ -1,0 +1,56 @@
+<!-- Construa um gráfico de linhas com 2 linhas e 3 pontos
+        LINHA A LINHA B
+PONTO A  20      15
+PONTO B  4       8
+PONTO C  9       12 -->
+
+<html>
+<head>
+    <title>Exercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+    .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 20px auto;
+    }
+    </style>
+</head>
+<body>
+    <div id='highcharts-line-chart' class='chart-container'></div>
+
+    <script>
+    $(document).ready(function () {
+        // Highcharts
+        Highcharts.chart('highcharts-line-chart', {
+        chart: {
+            type: 'line', // Tipo de gráfico: linha
+        },
+        title: {
+            text: 'Gráfico de Linhas', // Título do gráfico
+        },
+        xAxis: {
+            categories: ['PONTO A', 'PONTO B', 'PONTO C'], // Rótulos do eixo X
+        },
+        yAxis: {
+            title: {
+            text: 'Valores', // Título do eixo Y
+            },
+        },
+        series: [
+            {
+            name: 'Linha 1', // Nome da linha
+            data: [20, 4, 9], // Dados da linha
+            },
+            {
+            name: 'Linha 2',
+            data: [15, 8, 12],
+            }
+        ],
+        });
+    });
+    </script>
+</body>
+</html>

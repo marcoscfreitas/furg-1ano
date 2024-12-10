@@ -1,0 +1,86 @@
+<!-- Construa um gráfico de pizza com os dados:
+Categoria Pequena      35
+Categoria Média        52
+Categoria Grande       20 -->
+
+<html>
+<head>
+    <title>Exercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+    .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 20px auto;
+    }
+    </style>
+</head>
+<body>
+    <div id='highcharts-line-chart' class='chart-container'></div>
+
+    <script>
+    $(document).ready(function () {
+        // Highcharts
+        Highcharts.chart('highcharts-line-chart', {
+        chart: {
+        polar: true
+    },
+
+    title: {
+        text: 'Highcharts Polar Chart'
+    },
+
+    subtitle: {
+        text: 'Also known as Radar Chart'
+    },
+
+    pane: {
+        startAngle: 0,
+        endAngle: 360
+    },
+
+    xAxis: {
+        tickInterval: 45,
+        min: 0,
+        max: 360,
+        labels: {
+            format: '{value}°'
+        }
+    },
+
+    yAxis: {
+        min: 0
+    },
+
+    plotOptions: {
+        series: {
+            pointStart: 0,
+            pointInterval: 45
+        },
+        column: {
+            pointPadding: 0,
+            groupPadding: 0
+        }
+    },
+
+    series: [{
+        type: 'column',
+        name: 'Column',
+        data: [8, 7, 6, 5, 4, 3, 2, 1],
+        pointPlacement: 'between'
+    }, {
+        type: 'line',
+        name: 'Line',
+        data: [1, 2, 3, 4, 5, 6, 7, 8]
+    }, {
+        type: 'area',
+        name: 'Area',
+        data: [1, 8, 2, 7, 3, 6, 4, 5]
+    }]
+});
+    });
+    </script>
+</body>
+</html>

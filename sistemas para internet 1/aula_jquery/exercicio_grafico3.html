@@ -1,0 +1,54 @@
+<!-- Construa um gráfico de coluna com os dados:
+PRODUTO A      35
+PRODUTO B      52
+PRODUTO C      20 -->
+
+<html>
+<head>
+    <title>Exercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+    .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 20px auto;
+    }
+    </style>
+</head>
+<body>
+    <div id='highcharts-line-chart' class='chart-container'></div>
+
+    <script>
+    $(document).ready(function () {
+        // Highcharts
+        Highcharts.chart('highcharts-line-chart', {
+        chart: {
+            type: 'column', // Tipo de gráfico: linha
+        },
+        title: {
+            text: 'Gráfico de Colunas', // Título do gráfico
+        },
+        xAxis: {
+            title: {
+            text: 'Produtos'
+            },
+            categories: ['Produto A', 'Produto B', 'Produto C'], // Rótulos do eixo X
+        },
+        yAxis: {
+            title: {
+            text: 'Valores', // Título do eixo Y
+            },
+        },
+        series: [
+            {
+            name: 'Valores', // Nome da linha
+            data: [35, 52, 20], // Dados da linha
+            }
+        ],
+        });
+    });
+    </script>
+</body>
+</html>
