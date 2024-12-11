@@ -1,73 +1,74 @@
 # EXERCÍCIOS DE ARQUIVOS - 06/12/2024
 # 1) Escreva uma função que receba o estado e retorne a UF.
-'''def capitalize(estado):
-    estado_capitalize = ''
-    for i, letra in enumerate(estado):
-        if letra == ' ':
-            estado_capitalize += ' ' + estado[i + 1].capitalize()
-        elif ord(letra) >= 65 or ord(letra) <= 90:
+'''
+def capEstado(estado) :
+    estadoCap = ''
+    cont = 0
+    while cont != len(estado) :
+        if estado[cont] == ' ' :
+            estadoCap+= ' ' + estado[cont+1].upper()
+            cont+=1
+        else :
+            estadoCap += estado[cont]
+        cont+=1
+    return estadoCap
 
-        else:
-            estado_capitalize += letra
-    return estado_capitalize'''
+def retornaUF(estadoCap, dados) :
+    uf = ''
+    for linha in dados[1:] :
+        lista = linha.strip().split(',')
+        if estadoCap == lista[1] :
+            uf = lista[2]
+    return uf
 
-'''def EstadoParaUf(lista, estado):
-    for linha in lista[1:]:
-        coluna = linha.split(',')
-        if estado == coluna[1]:
-            uf = coluna[2][:-1]
-            return uf
-
-arq = open('estados.csv', 'r')
+estado = input('digite o estado: ').capitalize()
+arq = open('estados.csv', 'r') 
 dados = arq.readlines()
-estado = 'São Paulo'
-uf = EstadoParaUf(dados, estado)
-print(f'O estado correspondente a uf{uf} é {estado}.')
-arq.close()'''
+arq.close()
 
+estadoCap = capEstado(estado)
+uf = retornaUF(estadoCap,dados)
+print(f'o UF do estado de {estadoCap} é{uf}')
+'''
 # 2) Escreva uma função que receba a UF retorne o estado.
-'''def ufParaNome(lista, uf):
-    #print(lista, uf)
-    for linha in lista[1:]:
-        coluna = linha.split(',')
-        #print(f"({coluna[2][1:-1]}) ({uf})")
-        uf_refatorado = coluna[2][1:-1]
-        if uf_refatorado == uf:
-            estado = coluna[1]
-            print(estado)
-            return estado
+'''
+def retornaEstado(uf, dados) :
+    estado = ''
+    for linha in dados[1:] :
+        lista = linha.strip().split(',')
+        if uf == lista[2].strip() :
+            estado = lista[1]
+    return estado
 
-arq = open('estados.csv', 'r')
+uf = input('digite a UF: ').upper()
+arq = open('estados.csv', 'r') 
 dados = arq.readlines()
-uf = input('Digite a UF: ').upper()
-estado = ufParaNome(dados, uf)
-print(f'O estado correspondente a uf {uf} é {estado}.')
-arq.close()'''
+arq.close()
 
+estado = retornaEstado(uf,dados)
+print(f'o estado da uf {uf} é {estado}')
+'''
 # 3) Escreva uma função que retorne o estado com o nome do mais longo e o mais curto.
-'''def estadoMaisLongo(lista):
-    maior = 'São Paulo'
-    for linha in lista[1:]:
-        um_estado = linha.split(',')
-        print(len(um_estado[1]))
-        if len(um_estado[1]) > len(maior):
-            maior = um_estado[1]
+'''
+def retornaMaior(dados) :
+    maior = ''
+    for linha in dados[1:] :
+        lista = linha.strip().split(',')
+        if len(lista[1]) > len(maior) :
+            maior = lista[1]
     return maior
 
-def estadoMaisCurto(lista):
-    menor = 'São Paulo'
-    for linha in lista[1:]:
-        um_estado = linha.split(',')
-        print(len(um_estado[1]))
-        if len(um_estado[1]) < len(menor):
-            menor = um_estado[1]
+def retornaMenor(dados) :
+    menor = '      '
+    for linha in dados[1:] :
+        lista = linha.strip().split(',')
+        if len(lista[1]) < len(menor) :
+            menor = lista[1]
     return menor
-            
 
 arq = open('estados.csv', 'r')
 dados = arq.readlines()
-estado_longo = estadoMaisLongo(dados)
-estado_curto = estadoMaisCurto(dados)
-print(f'Estado de nome mais longo: {estado_longo} \nEstado de nome mais curto: {estado_curto}')
-arq.close()
+arq.close
+print(f'o estado com maior nome é: {retornaMaior(dados)}')
+print(f'o estado com menor nome é: {retornaMenor(dados)}')
 '''

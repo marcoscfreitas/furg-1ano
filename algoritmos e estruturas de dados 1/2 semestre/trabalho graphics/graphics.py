@@ -161,7 +161,7 @@ except:
    import Tkinter as tk
 
 
-##########################################################################
+##########################################################################sudo apt-get update
 # Module Exceptions
 
 class GraphicsError(Exception):

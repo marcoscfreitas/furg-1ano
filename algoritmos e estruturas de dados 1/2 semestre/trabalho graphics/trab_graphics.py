@@ -19,7 +19,6 @@
 
 import graphics as gf # importa arquivos de graphics
 import random as rd
-
 win = gf.GraphWin('minha janela',400,350) # cria uma janela
 
 c = gf.Circle(gf.Point(100,150), 10) # cria ponto
