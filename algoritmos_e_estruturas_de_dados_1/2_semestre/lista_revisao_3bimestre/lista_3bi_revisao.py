@@ -266,6 +266,52 @@ print(f'Lista 1: {lista1[0]}\nSoma lista 1: {lista1[1]}\nLista 2: {lista2[0]}\nS
 # pelo usuário. Crie uma matriz que reúna estas três listas (as listas podem ser as linhas ou as
 # colunas da matriz). Apresente o conteúdo da matriz, assim como o seu maior valor contido.
 
+'''def gerarListas(num1,num2,num3) :
+    lista1 = []
+    lista2 = []
+    lista3 = []
+    matriz = []
+
+    num1 = num1.split(' ')
+    for i in num1 :
+        i = int(i)
+        lista1.append(i)
+
+    num2 = num2.split(' ')
+    for i in num2 :
+        i = int(i)
+        lista2.append(i)
+
+    num3 = num3.split(' ')
+    for i in num3 :
+        i = int(i)
+        lista3.append(i)
+
+    matriz.append(lista1)
+    matriz.append(lista2)
+    matriz.append(lista3)
+
+    return matriz
+
+def verificarMaior (matriz) :
+    maiorValor = 0
+    for linha in matriz :
+        for num in linha :
+            if num > maiorValor :
+                maiorValor = num
+    return maiorValor
+
+def mostrarMatriz(matriz) :
+    for linha in matriz :
+        print(linha)
+
+num1 = input('informe números para lista 1 separados por espaço: ')
+num2 = input('informe números para lista 2 separados por espaço: ')
+num3 = input('informe números para lista 3 separados por espaço: ')
+matriz = gerarListas(num1,num2,num3)
+maiorValor = verificarMaior(matriz)
+mostrarMatriz(matriz)
+print(f'Maior valor da matriz: {maiorValor}')'''
 
 # 9) Faça um programa em Python para jogar o “jogo da velha”. O algoritmo deve permitir que
 # dois jogadores joguem uma partida, usando o computador para ver o tabuleiro. Cada
