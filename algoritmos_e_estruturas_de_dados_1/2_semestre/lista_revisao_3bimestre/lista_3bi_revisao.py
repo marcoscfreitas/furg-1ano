@@ -209,7 +209,7 @@ print(f'Lista 1: {lista1[0]}\nSoma lista 1: {lista1[1]}\nLista 2: {lista2[0]}\nS
 # 7) Altere o programa anterior para desprezar os números iguais, caso estes existam.
 # Portanto, a lista final não deve possuir números iguais armazenados.
 
-def gerarLista1() :
+'''def gerarLista1() :
     lista1 = []
     somaLista1 = 0
     # for _ in range(5) :
@@ -252,15 +252,15 @@ def gerarLista3(lista1, lista2) :
     for num2 in lista2[0] :
         if num2 not in lista3 :
             lista3.append(num2)
-
-    for num in range(len(lista3)+1) :
-        somaLista3 += num
+    for num3 in lista3 :
+        somaLista3 += num3
+    lista3.sort()
     return lista3, somaLista3
 
 lista1 = gerarLista1()
 lista2 = gerarLista2()
 lista3 = gerarLista3(lista1,lista2)
-print(f'Lista 1: {lista1[0]}\nSoma lista 1: {lista1[1]}\nLista 2: {lista2[0]}\nSoma lista 2: {lista2[1]}\nLista 3: {lista3[0]}\nSoma lista 3: {lista3[1]}')
+print(f'Lista 1: {lista1[0]}\nSoma lista 1: {lista1[1]}\nLista 2: {lista2[0]}\nSoma lista 2: {lista2[1]}\nLista 3: {lista3[0]}\nSoma lista 3: {lista3[1]}')'''
 
 # 8) Faça um programa em Python que leia três listas compostas por cinco números fornecidos
 # pelo usuário. Crie uma matriz que reúna estas três listas (as listas podem ser as linhas ou as
