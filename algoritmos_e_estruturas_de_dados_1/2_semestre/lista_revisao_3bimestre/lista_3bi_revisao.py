@@ -324,10 +324,66 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # 10) Escreva um programa em Python que calcule o comprimento da mais longa sequência de
 # espaços em branco em uma string lida.
 
+'''def contaBranco(texto) :
+    temp = 0
+    maiorSeq = 0
+
+    for i in range(len(texto)) :
+        if texto[i] == ' ' :
+            temp+=1
+        else: 
+            if temp > maiorSeq :
+                maiorSeq = temp
+                temp = 0
+    return maiorSeq
+
+texto = input('informe uma frase: ')
+maiorSeq = contaBranco(texto)
+print(f'o maior comprimento de espaços brancos tem {maiorSeq} de tamanho')'''
 
 # 11) Implementar um programa para somar matrizes.
 # Obs.: as matrizes obrigatoriamente têm a mesma dimensão.
 
+'''def gerarMatriz1() :
+    matriz1 = []
+    for i in range(2) :
+        linha = []
+        for j in range(2) :
+            valor = int(input(f'MATRIZ 1\ninforme o valor para a linha {i} coluna {j}: '))
+            linha.append(valor)
+        matriz1.append(linha)
+    return matriz1
+
+def gerarMatriz2() :
+    matriz2 = []
+    for i in range(2) :
+        linha = []
+        for j in range(2) :
+            valor = int(input(f'MATRIZ 2\ninforme o valor para a linha {i} coluna {j}: '))
+            linha.append(valor)
+        matriz2.append(linha)
+    return matriz2
+
+def somarMatrizes(matriz1,matriz2) :
+    matriz3 = []
+    for i in range(len(matriz1)) :
+        linha = []
+        for j in range(len(matriz1[0])) :
+            linha.append(matriz1[i][j] + matriz2[i][j])
+        matriz3.append(linha)
+    
+    return matriz3
+
+
+def mostrarMatriz(matriz3) :
+    for linha in matriz3 :
+        print(linha)
+
+matriz1 = gerarMatriz1()
+matriz2 = gerarMatriz2()
+matriz3 = somarMatrizes(matriz1,matriz2)
+
+final = mostrarMatriz(matriz3)'''
 
 # 12) Implementar um programa para multiplicar matrizes.
 # Obs (nro de elementos em cada dimensão):
@@ -384,6 +440,46 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # ● Números ímpares
 # ● Lista reversa
 
+'''def listaUmNove(lista) :
+    saida = lista[0:10]
+    return saida
+
+def listaOitoTreze(lista) :
+    saida = lista[8:14]
+    return saida
+
+def listaPares(lista) :
+    saida = []
+    for numero in lista :
+        if numero%2 == 0 :
+            saida.append(numero)
+    return saida
+
+def listaImpares(lista) :
+    saida = []
+    for numero in lista :
+        if numero%2 != 0 :
+            saida.append(numero)
+    return saida
+
+def listaReversa(lista) :
+    saida = []
+    for numero in lista[::-1] :
+        saida.append(numero)
+    return saida
+
+lista = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+listaUmNove = listaUmNove(lista)
+listaOitoTreze = listaOitoTreze(lista)
+listaPares = listaPares(lista)
+listaImpares = listaImpares(lista)
+listaReversa = listaReversa(lista)
+
+print(listaUmNove)
+print(listaOitoTreze)
+print(listaPares)
+print(listaImpares)
+print(listaReversa)'''
 
 # 18) Faça um programa em Python que receba a temperatura média de cada mês de um
 # determinado ano, e armazene-as em uma lista. Em seguida, calcule a média anual das
@@ -432,7 +528,41 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # foi conseguido. Use uma lista para armazenar os resultados da contagem de cada valor (1-6)
 # e uma função para gerar números aleatórios, simulando os lançamentos do dado.
 
+'''import random
 
+def jogaDado() :
+    listaDados = []
+    for _ in range(100) :
+        dado = random.randint(1,6)
+        listaDados.append(dado)
+
+    return listaDados
+
+def contaDado(listaDados) :
+    listaContagem = [0, 0, 0, 0, 0, 0]
+    for dado in listaDados :
+        if dado == 1 :
+            listaContagem[0] += 1
+        elif dado == 2 :
+            listaContagem[1] += 1
+        elif dado == 3 :
+            listaContagem[2] += 1
+        elif dado == 4 :
+            listaContagem[3] += 1
+        elif dado == 5 :
+            listaContagem[4] += 1
+        elif dado == 6 :
+            listaContagem[5] += 1
+
+    return listaContagem
+
+listaDados = jogaDado()
+listaContagem = contaDado(listaDados)
+
+print(f'os dados lançados foram: {listaDados}\nnúmero 1 apareceu: {listaContagem[0]} vezes\n\
+número 2 apareceu: {listaContagem[1]} vezes\nnúmero 3 apareceu: {listaContagem[2]} vezes\n\
+número 4 apareceu: {listaContagem[3]} vezes\nnúmero 5 apareceu: {listaContagem[4]} vezes\n\
+número 6 apareceu: {listaContagem[5]} vezes\n')'''
 
 # 21) Crie uma função em Python que receba por parâmetro uma string e uma letra. Retorne a
 # string equivalente à enviada como parâmetro, mas sem a letra informada. Por exemplo:
@@ -441,13 +571,32 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # ● Crie a função usando apenas recursos básicos, sem as funções para manipulação de
 # strings.
 
+'''def removeLetra(texto,letra) :
+    saida = texto.replace(letra, '')
+    return saida
 
+texto = input('informe o texto: ')
+letra = input('informe a letra para ser removida: ')
+saida = removeLetra(texto,letra)
+print(saida)'''
 
 # 22) Crie uma função em Python que receba por parâmetro uma lista e uma letra. Retorne
 # uma lista equivalente à enviada como parâmetro, mas sem a letra informada. A ordem dos
 # elementos deve ser mantida. Por exemplo:
 # retira([a,b,c,a,f,a,a,k],a) —> [b,c,f,k]
 
+'''def removeLetraList(lista,letra) :
+    for i in lista :
+        if i == letra :
+            lista.remove(i)
+    return lista
+
+lista = input('digite uma lista separada por espaço: ')
+letra = input('digite a letra a ser removida: ')
+lista = lista.split(' ')
+
+saida = removeLetraList(lista,letra)
+print(saida)'''
 
 # 23) Dado o código abaixo, responda:
 # x = 10
@@ -461,8 +610,10 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # print("3o print - Endereço de x", id(x))
 
 # a) Os endereços apresentados na tela das variáveis nos 1o e 2o prints são iguais? Por que?
+'''sim, pois armazenam o mesmo valor, logo o computador atribui o mesmo espaço de memória para ambos'''
 # b) De acordo com a resposta no item (a), qual será o endereço apresentado no 3o print do
 # código?
+'''será um endereço diferente de quando no print 1, pois o valor foi alterado, logo, nao pode estar no mesmo endereço'''
 
 
 # 24) Dado o código abaixo, responda:
@@ -473,8 +624,7 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # print(str)
 # print("2o print - Endereço de str", id(str))
 # Os endereços apresentados na tela são os mesmos? Por que?
-
-
+'''não, pois strings são valores imutaveis e quando mudamos seu valor atribuindo uma nova variavel, o endereço também muda'''
 
 # 25) Dado o seguinte código:
 # def step(x,value):
@@ -491,3 +641,6 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 
 # O código executará até o final (últimos prints)? Se não, como tu resolverias alterando o
 # mínimo, valendo-se do conhecimento sobre ponteiros em Python?
+'''não executará até o fim pois ficará preso em um loop infinito, uma vez que o cont continua 0 infinitamente,
+o que poderia mudar é incrementar o cont com mada chamada da função, assim o ultimo print apareceria, porém, com cada
+mudança do cont, seu endereço também mudaria'''
