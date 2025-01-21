@@ -453,6 +453,33 @@ final = mostrarMatriz(matriz3)'''
 # parâmetros, o nome do arquivo com os dados e o número do canal, e retorne a
 # porcentagem de audiência deste canal.
 
+'''def porcentagemAudiencia(dados, canal) :
+    canalAudiencia = 0
+    totalAudiencia = 0
+    for linha in dados :
+        linha = linha.strip().split(';')
+        if linha[0] == canal :
+            canalAudiencia+=int(linha[1])
+            totalAudiencia+=int(linha[1])
+        else :
+            totalAudiencia+=int(linha[1])
+    porcentagem = (canalAudiencia/totalAudiencia)*100
+    return porcentagem
+
+arq = open('audiencia_tv.txt', 'r') 
+dados = arq.readlines()
+canal = input('digite um canal para verificar a porcentagem de audiência: ')
+porcentagem = porcentagemAudiencia(dados,canal)
+print(f'a porcentagem do canal {canal} é de {porcentagem:.2f}%')'''
+
+    # if linha[0] == '4' :
+    #     canal4 += int(linha[1])
+    # elif linha[0] == '5' :
+    #     canal5 += int(linha[1])
+    # elif linha[0] == '7' :
+    #     canal7 += int(linha[1])
+    # elif linha[0] == '12' :
+    #     canal12 += int(linha[1])
 
 # 16) Uma universidade deseja fazer um levantamento a respeito de seu processo de seleção.
 # Para cada curso, é fornecido um arquivo texto com o seguinte conjunto de valores:
@@ -468,6 +495,26 @@ final = mostrarMatriz(matriz3)'''
 # com o código do curso correspondente (supor que não haja empate);
 # • Calcule e escreva o total de candidatos.
 
+'''arq = open('cursos_universidade.txt', 'r')
+dados = arq.readlines()
+
+maiorCandidatoVaga = 0
+maiorCandidatoVagaCurso = ''
+maiorCandidatoVagaCodigo = ''
+totalCandidatos = 0
+for linha in dados :
+    linha = linha.strip().split(';')
+    totalCandidatos += int(linha[3])
+    totalCandidatos += int(linha[4])
+    candidatoVaga = (int(linha[3])+int(linha[4]))/int(linha[2])
+    if candidatoVaga > maiorCandidatoVaga :
+        maiorCandidatoVaga = candidatoVaga
+        maiorCandidatoVagaCurso = linha[0]
+        maiorCandidatoVagaCodigo = linha[1]
+    porcentagemFem = (int(linha[4])*100)/(int(linha[3])+int(linha[4]))
+    print(f'{linha[0]}({linha[1]}): {candidatoVaga:.2f} pessoas por vaga. {porcentagemFem:.2f}% de candidatas mulheres.')
+print(f'o curso com maior candidatos por vaga é {maiorCandidatoVagaCurso}({maiorCandidatoVagaCodigo}), com {maiorCandidatoVaga} candidatos por vaga.')
+print(f'total de candidatos: {totalCandidatos}')'''
 
 # 17) Crie as seguintes listas derivadas da lista informada:
 # L = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]

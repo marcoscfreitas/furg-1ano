@@ -1,0 +1,5 @@
+Computação;101;50;120;80
+Medicina;102;40;100;150
+Direito;103;70;80;90
+Arquitetura;104;30;60;70
+Matemática;105;20;30;20
