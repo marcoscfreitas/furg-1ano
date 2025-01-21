@@ -371,9 +371,7 @@ def somarMatrizes(matriz1,matriz2) :
         for j in range(len(matriz1[0])) :
             linha.append(matriz1[i][j] + matriz2[i][j])
         matriz3.append(linha)
-    
     return matriz3
-
 
 def mostrarMatriz(matriz3) :
     for linha in matriz3 :
@@ -392,12 +390,52 @@ final = mostrarMatriz(matriz3)'''
 # Multiplicação: (Linhas1 x Colunas1) x (Linhas2 x Colunas2), onde Colunas1 = Linhas2
 # Resultado: (Linhas1 x Colunas2)
 
+'''def gerarMatriz1() :
+    matriz1 = []
+    for i in range(2) :
+        linha = []
+        for j in range(2) :
+            valor = int(input(f'MATRIZ 1\ninforme o valor para a linha {i} coluna {j}: '))
+            linha.append(valor)
+        matriz1.append(linha)
+    return matriz1
+
+def gerarMatriz2() :
+    matriz2 = []
+    for i in range(2) :
+        linha = []
+        for j in range(2) :
+            valor = int(input(f'MATRIZ 2\ninforme o valor para a linha {i} coluna {j}: '))
+            linha.append(valor)
+        matriz2.append(linha)
+    return matriz2
+
+def multiplicarMatrizes(matriz1, matriz2):
+    matriz3 = []
+    for i in range(len(matriz1)):
+        linha = []
+        for j in range(len(matriz2[0])):
+            soma = 0
+            for k in range(len(matriz2)):
+                soma += matriz1[i][k] * matriz2[k][j]
+            linha.append(soma)
+        matriz3.append(linha)
+    return matriz3
+
+def mostrarMatriz(matriz3) :
+    for linha in matriz3 :
+        print(linha)
+
+matriz1 = gerarMatriz1()
+matriz2 = gerarMatriz2()
+matriz3 = multiplicarMatrizes(matriz1,matriz2)
+
+final = mostrarMatriz(matriz3)'''
 
 # 13) Faça uma função, em Python, cujo protótipo é QuantosDias(dia, mes, ano),
 # que retorne a quantidade de dias do ano até a data informada por parâmetro. Para tanto, é
 # preciso verificar o número de dias em cada mês. O mês de fevereiro pode ter 28 ou 29 dias,
 # dependendo se o ano for bissexto (verificar).
-
 
 # 14) Um anagrama é uma espécie de jogo de palavras, resultando do rearranjo das letras de
 # uma palavra ou frase para produzir outras palavras, utilizando todas as letras originais
@@ -406,7 +444,6 @@ final = mostrarMatriz(matriz3)'''
 # para ler um valor N correspondente ao número de palavras a serem informadas. Após, ler as
 # N palavras, e dizer se formam um anagrama. Considerar 1 <= N <= 5, e palavras com, no
 # máximo, 10 caracteres.
-
 
 # 15) Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma certa cidade,
 # em um determinado dia. Em um arquivo texto é fornecido, para cada casa visitada, o
@@ -487,6 +524,40 @@ print(listaReversa)'''
 # média anual, e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 –
 # Fevereiro, . . . ).
 
+'''def receberTemperatura() :
+    temperaturaLista = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto',
+    'setembro','outubro','novembro','dezembro']
+
+    # for i, mes in enumerate(temperaturaLista):
+    #     temperatura = int(input(f'Informe a temperatura de {mes}: '))
+    #     temperaturaLista[i] = temperatura
+    for index in range(len(temperaturaLista)) :
+        temperatura = int(input(f'informe a temperatura de {temperaturaLista[index]}: '))
+        temperaturaLista[index] = temperatura
+    return temperaturaLista
+
+def calculaMedia(temperaturaLista) :
+    media = 0
+    for temperatura in temperaturaLista :
+        media += temperatura
+    media = media/12
+    return media
+
+def verificaMedia(temperaturaLista,media) :
+    meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto',
+    'setembro','outubro','novembro','dezembro']
+    saida = []
+    for index in range(len(temperaturaLista)) :
+        if temperaturaLista[index] > media :
+            saida.append(meses[index])
+    return saida
+
+temperaturaLista = receberTemperatura()
+media = calculaMedia(temperaturaLista)
+saida = verificaMedia(temperaturaLista, media)
+print(temperaturaLista)
+print(media)
+print(saida)'''
 
 # 19) A Furg está tendo problemas de espaço em disco no seu servidor de arquivos. Para
 # tentar resolver este problema, o Administrador de Rede precisa saber qual o espaço
