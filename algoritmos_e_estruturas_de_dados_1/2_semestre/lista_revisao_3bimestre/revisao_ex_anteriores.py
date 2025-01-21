@@ -113,7 +113,7 @@ print(saida)'''
 # ● Identificar qual experimento teve a menor pressão mínima.
 # ● Exibir todos os experimentos em que a temperatura seja superior a 25 graus Celsius.
 
-def tempMedia() :
+'''def tempMedia() :
     listaTemperaturas = dados[0].strip().split(', ')
     tempMedia = 0
     for temperatura in listaTemperaturas :
@@ -160,23 +160,26 @@ def pressaoMin() :
 
     return experimentoMenorPressao
 
+def sup25() :
+    listaTemperaturas = dados[0].strip().split(', ')
+    listaExperimentos = dados[2].strip().split(', ')
+    superior25 = []
+    for temperatura in listaTemperaturas :
+        temperatura = int(temperatura)
+        if temperatura > 25 :
+            superior25.append(listaExperimentos[listaTemperaturas.index(str(temperatura))])
+
+    return superior25
+
 arq = open('dados.txt', 'r') 
 dados = arq.readlines()
 # print(dados)
 
-print(tempMedia())
-print(pressaoMedia())
-print(tempMaxima())
-print(pressaoMin())
-
-
-
-
-
-
-
-
-
+print(f'temperatura média: {tempMedia()}')
+print(f'pressão média: {pressaoMedia()}')
+print(f'exp. com temperatura máxima: {tempMaxima()}')
+print(f'exp. com pressão mínima: {pressaoMin()}')
+print(f'exp. com temperatura superior à 25º: {sup25()}')'''
 
 # 2) Você deve criar um jogo de dados em Python onde o jogador lança dois
 # dados de seis faces e tenta adivinhar se a soma dos números nos dados será maior
