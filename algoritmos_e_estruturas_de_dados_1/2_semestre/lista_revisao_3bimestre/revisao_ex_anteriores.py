@@ -224,3 +224,64 @@ soma = jogarDados()
 print(f'o número dos dados somam {soma}')
 saida = verificarResultado(soma,aposta)
 print(saida)'''
+
+# função recursiva que retorne os divisores de tal número
+
+'''def divisores(num):
+    if num != 1:
+        result = num//2
+        divisores(result)
+        print(num)
+    else:
+        print(num)
+divisores(100)'''
+
+# leia o arquivo logs.txt e fale a frequencia de cada usuário em um novo arquivo.
+
+'''arq = open('logs.txt', 'r')
+novoLog = open("novoLog.csv", "w")
+dados = arq.readlines()
+lidos = []
+qntLidos = []
+
+for i in range(len(dados)) :
+    dados[i] = dados[i].strip()
+    if dados[i] not in lidos :
+        lidos.append(dados[i])
+        qntLidos.append(1)
+    else :
+        qntLidos[lidos.index(dados[i])] += 1
+print(lidos,qntLidos)
+
+for index in range(len(qntLidos)) :
+    novoLog.writelines(f'{lidos[index]}: {qntLidos[index]}\n')'''
+
+# faça um jogo da forca usando funções
+
+'''def jogoDaForca(palavra) :
+    tracinhos = []
+    palavraLista = []
+    tentativasRestantes = 6
+    for i in range(len(palavra)) :
+        tracinhos.append('_')
+        palavraLista.append(palavra[i])
+
+    while palavraLista != tracinhos and tentativasRestantes != 0 :
+        print(''.join(tracinhos))
+        letraChutada = input(f'tentativas restantes: {tentativasRestantes}\ndigite uma letra: ')
+        for index in range(len(palavra)) :
+            if palavra[index] == letraChutada :
+                tracinhos[index] = letraChutada
+        if letraChutada not in palavra :
+            tentativasRestantes-=1
+
+        if palavraLista == tracinhos :
+            print(''.join(tracinhos))
+            print('parabéns, você advinhou a palavra!')
+
+        if tentativasRestantes == 0 :
+            print(''.join(tracinhos))
+            print(f'você perdeu, a palavra era: {palavra}')
+
+palavra = 'eletricidade'
+jogoDaForca(palavra)'''

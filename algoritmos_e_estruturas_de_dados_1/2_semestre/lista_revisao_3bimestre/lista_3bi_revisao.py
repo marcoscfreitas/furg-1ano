@@ -320,7 +320,6 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # jogo terminou, e quem foi o vencedor (jogador1 ou jogador2). A cada nova jogada, o
 # programa deve atualizar a situação do tabuleiro na tela.
 
-
 # 10) Escreva um programa em Python que calcule o comprimento da mais longa sequência de
 # espaços em branco em uma string lida.
 
@@ -444,6 +443,37 @@ final = mostrarMatriz(matriz3)'''
 # para ler um valor N correspondente ao número de palavras a serem informadas. Após, ler as
 # N palavras, e dizer se formam um anagrama. Considerar 1 <= N <= 5, e palavras com, no
 # máximo, 10 caracteres.
+
+'''def verificaAnagrama(palavra1,palavra2) :
+    palavra1Lista = []
+    palavra2Lista = []
+    letrasLidas = []
+
+    for letra in palavra1 :
+        palavra1Lista.append(letra)
+    for letra in palavra2 :
+        palavra2Lista.append(letra)
+
+    if len(palavra1Lista) != len(palavra2Lista) :
+        return False
+    else :
+        for index in range(len(palavra1Lista)) :
+            if palavra1Lista[index] in palavra2Lista :
+                letrasLidas.append(palavra1Lista[index])
+
+        if letrasLidas == palavra1Lista :
+            return True
+        else :
+            return False
+
+palavra1 = input('informe uma palavra: ')
+palavra2 = input('informe outra palavra: ')
+
+if verificaAnagrama(palavra1,palavra2) :
+    print('são anagramas')
+else :
+    print('não são anagramas')'''
+
 
 # 15) Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma certa cidade,
 # em um determinado dia. Em um arquivo texto é fornecido, para cada casa visitada, o
@@ -762,3 +792,33 @@ print(saida)'''
 '''não executará até o fim pois ficará preso em um loop infinito, uma vez que o cont continua 0 infinitamente,
 o que poderia mudar é incrementar o cont com mada chamada da função, assim o ultimo print apareceria, porém, com cada
 mudança do cont, seu endereço também mudaria'''
+
+# 26) Crie uma função que receba duas strings e retorne a similaridade entre elas. A similaridade é dada pela
+# quantidade de caracteres em comum entre as duas strings dividida pela quantidade total de caracteres das duas
+# strings. Por exemplo, a similaridade entre as strings 'casa' e 'cama' é 0.5, pois metade dos caracteres são iguais.
+# A função deve retornar um número entre 0 e 1, onde 0 significa que as strings são completamente diferentes e 1 
+# significa que são iguais.
+
+'''def similaridadeStrings(string1,string2) :
+    caracteresComuns = 0
+    similaridade = 0
+    caracteresLidos = []
+    string1Lista = []
+    string2Lista = []
+    
+    for letra in string1 :
+        string1Lista.append(letra)
+    for letra in string2 :
+        string2Lista.append(letra)
+
+    for i in range(len(string1Lista)) :
+        if string1Lista[i] == string2Lista[i] and string1Lista[i] not in caracteresLidos:
+            caracteresComuns+=1
+            caracteresLidos.append(string1Lista[i])
+
+    similaridade = (caracteresComuns*2)/(len(string1)+len(string2))
+    print(caracteresComuns, caracteresLidos, similaridade)
+
+string1 = input('informe um texto1: ')
+string2 = input('informe um texto2: ')
+similaridadeStrings(string1,string2)'''
