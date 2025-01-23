@@ -320,6 +320,55 @@ print(f'Maior valor da matriz: {maiorValor}')'''
 # jogo terminou, e quem foi o vencedor (jogador1 ou jogador2). A cada nova jogada, o
 # programa deve atualizar a situação do tabuleiro na tela.
 
+'''def inicializar_tabuleiro():
+    return [[' ' for _ in range(3)] for _ in range(3)]
+
+def imprimir_tabuleiro(tabuleiro):
+    for linha in tabuleiro:
+        print('|'.join(linha))
+        print('-' * 5)
+
+def verificar_vitoria(tabuleiro, jogador):
+    for linha in tabuleiro:
+        if all([celula == jogador for celula in linha]):
+            return True
+    for coluna in range(3):
+        if all([tabuleiro[linha][coluna] == jogador for linha in range(3)]):
+            return True
+    if all([tabuleiro[i][i] == jogador for i in range(3)]) or all([tabuleiro[i][2-i] == jogador for i in range(3)]):
+        return True
+    return False
+
+def verificar_empate(tabuleiro):
+    return all([celula != ' ' for linha in tabuleiro for celula in linha])
+
+def jogada_valida(tabuleiro, linha, coluna):
+    return 0 <= linha < 3 and 0 <= coluna < 3 and tabuleiro[linha][coluna] == ' '
+
+def jogar():
+    tabuleiro = inicializar_tabuleiro()
+    jogador_atual = 'X'
+    while True:
+        imprimir_tabuleiro(tabuleiro)
+        linha = int(input(f'Jogador {jogador_atual}, informe a linha (0, 1, 2): '))
+        coluna = int(input(f'Jogador {jogador_atual}, informe a coluna (0, 1, 2): '))
+        if jogada_valida(tabuleiro, linha, coluna):
+            tabuleiro[linha][coluna] = jogador_atual
+            if verificar_vitoria(tabuleiro, jogador_atual):
+                imprimir_tabuleiro(tabuleiro)
+                print(f'Jogador {jogador_atual} venceu!')
+                break
+            elif verificar_empate(tabuleiro):
+                imprimir_tabuleiro(tabuleiro)
+                print('O jogo empatou!')
+                break
+            jogador_atual = 'O' if jogador_atual == 'X' else 'X'
+        else:
+            print('Jogada inválida. Tente novamente.')
+
+# Iniciar o jogo
+jogar()'''
+
 # 10) Escreva um programa em Python que calcule o comprimento da mais longa sequência de
 # espaços em branco em uma string lida.
 
@@ -435,6 +484,32 @@ final = mostrarMatriz(matriz3)'''
 # que retorne a quantidade de dias do ano até a data informada por parâmetro. Para tanto, é
 # preciso verificar o número de dias em cada mês. O mês de fevereiro pode ter 28 ou 29 dias,
 # dependendo se o ano for bissexto (verificar).
+
+'''def eh_bissexto(ano):
+    if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+        return True
+    return False
+
+def dias_no_mes(mes, ano):
+    if mes == 2:
+        return 29 if eh_bissexto(ano) else 28
+    elif mes in [4, 6, 9, 11]:
+        return 30
+    else:
+        return 31
+
+def QuantosDias(dia, mes, ano):
+    dias_totais = 0
+    for m in range(1, mes):
+        dias_totais += dias_no_mes(m, ano)
+    dias_totais += dia
+    return dias_totais
+
+# Exemplo de uso
+dia = 15
+mes = 3
+ano = 2023
+print(f'A quantidade de dias até {dia}/{mes}/{ano} é {QuantosDias(dia, mes, ano)}')'''
 
 # 14) Um anagrama é uma espécie de jogo de palavras, resultando do rearranjo das letras de
 # uma palavra ou frase para produzir outras palavras, utilizando todas as letras originais
@@ -670,6 +745,40 @@ print(saida)'''
 # percentual de uso também deverá ser feito através de uma função, que será chamada pelo
 # programa principal.
 
+'''def bytes_para_megabytes(bytes):
+    return bytes / (1024 * 1024)
+
+def calcular_percentual(espaco_utilizado, espaco_total):
+    return (espaco_utilizado / espaco_total) * 100
+
+def gerar_relatorio(usuarios):
+    espaco_total = sum(usuarios.values())
+    espaco_medio = espaco_total / len(usuarios)
+
+    with open('relatório.txt', 'w') as relatorio:
+        relatorio.write('Furg Uso do espaço em disco pelos usuários\n')
+        relatorio.write('------------------------------------------------------------------------\n')
+        relatorio.write('Nr. Usuário   Espaço utilizado % do uso\n')
+
+        for i, (usuario, espaco) in enumerate(usuarios.items(), start=1):
+            espaco_mb = bytes_para_megabytes(espaco)
+            percentual_uso = calcular_percentual(espaco, espaco_total)
+            relatorio.write(f'{i}  {usuario:<15} {espaco_mb:>8.2f} MB       {percentual_uso:>6.2f}%\n')
+
+        relatorio.write(f'\nEspaço total ocupado: {bytes_para_megabytes(espaco_total):.2f} MB\n')
+        relatorio.write(f'Espaço médio ocupado: {bytes_para_megabytes(espaco_medio):.2f} MB\n')
+
+def ler_usuarios(arquivo):
+    usuarios = {}
+    with open(arquivo, 'r') as file:
+        for linha in file:
+            nome, espaco = linha.split()
+            usuarios[nome] = int(espaco)
+    return usuarios
+
+# Código principal
+usuarios = ler_usuarios('usuarios.txt')
+gerar_relatorio(usuarios)'''
 
 # 20) Faça um programa em Python que simule um lançamento de um dado. Lance o dado
 # 100 vezes e armazene os resultados em uma lista. Depois, mostre quantas vezes cada valor
